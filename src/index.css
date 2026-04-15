@@ -5,15 +5,24 @@
 }
 
 :root {
-  --navy: #0a0f1e;
-  --navy-mid: #0d1529;
-  --navy-light: #111c35;
-  --accent: #4f8ef7;
-  --accent-green: #2de0a5;
-  --text-primary: #ffffff;
-  --text-secondary: #a0aec0;
-  --text-muted: #64748b;
-  --border: rgba(255,255,255,0.08);
+  /* Light healthcare palette */
+  --bg: #f2f7fd;            /* page bg - very light blue */
+  --bg-alt: #e6eef9;        /* alt section bg */
+  --surface: #ffffff;       /* cards, dropdowns */
+  --surface-2: #f8fbff;     /* subtle alt surface */
+  --accent: #1e6fd9;        /* primary blue */
+  --accent-soft: #4f8ef7;   /* secondary blue */
+  --accent-green: #15b886;
+  --text-primary: #0d2648;  /* deep navy text on light */
+  --text-secondary: #4a5b78;/* body/secondary */
+  --text-muted: #7b8aa3;    /* muted */
+  --border: rgba(13, 38, 72, 0.10);
+  --border-soft: rgba(13, 38, 72, 0.06);
+
+  /* Back-compat legacy tokens (now light) */
+  --navy: #f2f7fd;
+  --navy-mid: #e6eef9;
+  --navy-light: #dbe7f5;
 }
 
 html {
@@ -22,7 +31,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--navy);
+  background: var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -32,6 +41,7 @@ h1, h2, h3, h4 {
   font-family: 'Fraunces', serif;
   font-weight: 400;
   line-height: 1.15;
+  color: var(--text-primary);
 }
 
 a {

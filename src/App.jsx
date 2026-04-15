@@ -19,6 +19,7 @@ import MissionVision from './components/MissionVision'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import OurTeam from './components/OurTeam'
 import Services from './components/Services'
+import Training from './components/Training'
 import './App.css'
 
 export default function App() {
@@ -72,6 +73,10 @@ export default function App() {
 
       {page === 'services' && (
         <Services onNavigate={navigate} initialSection={serviceSection} />
+      )}
+
+      {page === 'training' && (
+        <Training onNavigate={navigate} />
       )}
       {/* {page === 'our-team' && (
         <div style={{

@@ -220,9 +220,13 @@ export default function Products() {
 
           {/* ── HTML: center badge ── */}
           <div className="products__center">
-            <div className="products__center-ring" />
-            <span className="products__center-icon">⚕️</span>
-            <span className="products__center-label">C3 Credent</span>
+            <div className="products__center-ring products__center-ring--outer" />
+            <div className="products__center-ring products__center-ring--inner" />
+            <img
+              src="/cnclogo.png"
+              alt="C3 Credent"
+              className="products__center-logo"
+            />
           </div>
 
           {/* ── HTML: product cards ── */}

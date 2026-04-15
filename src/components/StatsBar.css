@@ -27,13 +27,13 @@
 .statsbar__value {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: -0.03em;
 }
 
 .statsbar__label {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
@@ -41,7 +41,7 @@
 .statsbar__divider {
   width: 1px;
   height: 40px;
-  background: rgba(255,255,255,0.08);
+  background: var(--border);
   flex-shrink: 0;
 }
 

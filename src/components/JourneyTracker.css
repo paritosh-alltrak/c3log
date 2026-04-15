@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   z-index: 99;
-  background: #080e1f;
-  border-bottom: 1px solid rgba(79, 142, 247, 0.12);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
   height: 100px;
   overflow: visible;
   /* clip scooter as it exits edges */
