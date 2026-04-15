@@ -17,6 +17,7 @@ import CompanyProfile from './components/CompanyProfile'
 import MissionVision from './components/MissionVision'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import OurTeam from './components/OurTeam'
+import Services from './components/Services'
 import './App.css'
 
 export default function App() {
@@ -65,6 +66,9 @@ export default function App() {
         <OurTeam onNavigate={navigate} />
       )}
 
+      {page === 'services' && (
+        <Services onNavigate={navigate} />
+      )}
       {/* {page === 'our-team' && (
         <div style={{
           minHeight: '100vh',

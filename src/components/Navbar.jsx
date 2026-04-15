@@ -30,16 +30,35 @@ export default function Navbar({ onNavigate, currentPage }) {
   return (
     <nav className="navbar">
       <div className="navbar__inner">
-        <span className="navbar__logo" onClick={() => handleNav('home')} style={{ cursor: 'pointer' }}>
-          <span className="logo-c3">C3</span><span className="logo-log">Logistics</span>
+
+        {/* LOGO */}
+        <span
+          className="navbar__logo"
+          onClick={() => handleNav('home')}
+          style={{ cursor: 'pointer' }}
+        >
+          <span className="logo-c3">C3</span>
+          <span className="logo-log">Logistics</span>
         </span>
 
+        {/* NAV LINKS */}
         <ul className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
-          <li><a onClick={() => handleHomeLink('#journey')} href="#journey">Solutions</a></li>
-          <li><a onClick={() => handleHomeLink('#coverage')} href="#coverage">Coverage</a></li>
-          <li><a onClick={() => handleHomeLink('#products')} href="#products">Products</a></li>
 
-          {/* About Us dropdown */}
+          <li><a onClick={() => handleHomeLink('#journey')}>Solutions</a></li>
+          <li><a onClick={() => handleHomeLink('#coverage')}>Coverage</a></li>
+          <li><a onClick={() => handleHomeLink('#products')}>Products</a></li>
+
+          {/* ✅ NEW: SERVICES */}
+          <li>
+            <span
+              className={`navbar__link ${currentPage === 'services' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('services')}
+            >
+              Services
+            </span>
+          </li>
+
+          {/* ABOUT DROPDOWN */}
           <li
             className={`navbar__dropdown-wrap ${aboutOpen ? 'navbar__dropdown-wrap--open' : ''}`}
             onMouseEnter={() => setAboutOpen(true)}
@@ -48,11 +67,15 @@ export default function Navbar({ onNavigate, currentPage }) {
             <span className="navbar__dropdown-trigger">
               About Us <span className="navbar__chevron">▾</span>
             </span>
+
             <ul className="navbar__dropdown">
               {aboutItems.map((item) => (
                 <li key={item.page}>
                   <span
-                    className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
+                    className={`navbar__dropdown-item ${currentPage === item.page
+                        ? 'navbar__dropdown-item--active'
+                        : ''
+                      }`}
                     onClick={() => handleNav(item.page)}
                   >
                     {item.label}
@@ -62,14 +85,27 @@ export default function Navbar({ onNavigate, currentPage }) {
             </ul>
           </li>
 
-          <li><a onClick={() => handleHomeLink('#contact')} href="#contact">Contact</a></li>
+          <li><a onClick={() => handleHomeLink('#contact')}>Contact</a></li>
+
         </ul>
 
-        <a href="#contact" className="navbar__cta" onClick={() => handleNav('home')}>Get in touch</a>
+        {/* CTA */}
+        <button
+          className="navbar__cta"
+          onClick={() => handleNav('services')}
+        >
+          Get in touch
+        </button>
 
-        <button className="navbar__hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
+        {/* MOBILE MENU */}
+        <button
+          className="navbar__hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
           <span /><span /><span />
         </button>
+
       </div>
     </nav>
   )
