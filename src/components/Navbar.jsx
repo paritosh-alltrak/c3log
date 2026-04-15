@@ -100,6 +100,15 @@ export default function Navbar({ onNavigate, currentPage }) {
             </ul>
           </li>
 
+          <li>
+            <span
+              className={`navbar__link ${currentPage === 'training' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('training')}
+            >
+              Training
+            </span>
+          </li>
+
           <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#contact'); }}>Contact</a></li>
         </ul>
 

@@ -259,8 +259,10 @@
 }
 
 /* subtle vertical bounce while riding */
-.js-scooter svg {
+.js-scooter svg,
+.js-scooter__img {
   animation: scooter-bounce 0.35s ease-in-out infinite alternate;
+  display: block;
 }
 
 @keyframes scooter-bounce {
