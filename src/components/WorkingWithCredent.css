@@ -1,0 +1,41 @@
+.wwc-content p {
+  text-align: justify;
+}
+
+.wwc-highlight {
+  color: #1e6fd9 !important;
+}
+
+.wwc-cta-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.wwc-btn {
+  padding: 12px 32px;
+  background: #1e6fd9;
+  color: #fff;
+  border: 2px solid #1e6fd9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.wwc-btn:hover {
+  background: #155ab8;
+  border-color: #155ab8;
+}
+
+.wwc-btn--outline {
+  background: transparent;
+  color: #1e6fd9;
+}
+
+.wwc-btn--outline:hover {
+  background: #1e6fd9;
+  color: #fff;
+}
