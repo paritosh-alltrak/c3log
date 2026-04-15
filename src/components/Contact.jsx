@@ -57,6 +57,17 @@ export default function Contact() {
               <span className="contact__success-icon">✅</span>
               <h3>Thank you!</h3>
               <p>We'll get back to you within 24 hours.</p>
+              <button
+                type="button"
+                className="contact__submit"
+                style={{ marginTop: 16 }}
+                onClick={() => {
+                  setForm({ name: '', org: '', email: '', phone: '', message: '' })
+                  setSent(false)
+                }}
+              >
+                Send another message
+              </button>
             </div>
           ) : (
             <form className="contact__form" onSubmit={handleSubmit}>

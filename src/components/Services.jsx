@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Services.css";
 
 const servicesData = {
@@ -155,8 +155,29 @@ const servicesData = {
     },
 };
 
-export default function Services({ onNavigate }) {
-    const [active, setActive] = useState("Rider App Tos");
+export const serviceSections = [
+    "Rider App Tos",
+    "Field Executives (Bikers)",
+    "Phlebotomist Services",
+    "Man Power Outsourcing",
+    "Home Collection",
+    "Cold Chain Logistics",
+    "Corporate Health",
+    "Onsite Radiology Services",
+    "Lab Technician",
+    "Customer Care Setup",
+];
+
+export default function Services({ onNavigate, initialSection }) {
+    const [active, setActive] = useState(
+        initialSection && servicesData[initialSection] ? initialSection : "Rider App Tos"
+    );
+
+    useEffect(() => {
+        if (initialSection && servicesData[initialSection]) {
+            setActive(initialSection);
+        }
+    }, [initialSection]);
 
     return (
         <div className="services-page">

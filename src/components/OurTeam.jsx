@@ -20,18 +20,18 @@ const committees = {
     "Nomination and Remuneration Committee": [
         { initials: 'TS', name: 'Tarun Sharma', role: 'Chairman' },
         { initials: 'VY', name: 'Vanita Yadav', role: 'Independent Director' },
-        { initials: 'TS', name: 'Tejpal Singh', role: 'Independent Director' },
+        { initials: 'JW', name: 'Tejpal Singh', role: 'Independent Director' },
     ],
     "Audit Committee": [
         { initials: 'TS', name: 'Tarun Sharma', role: 'Chairman' },
         { initials: 'VY', name: 'Vanita Yadav', role: 'Independent Director' },
-        { initials: 'TS', name: 'Tejpal Singh', role: 'Independent Director' },
+        { initials: 'JW', name: 'Tejpal Singh', role: 'Independent Director' },
     ],
     "Stakeholders Relationship Committee": [
         { initials: 'TS', name: 'Tarun Sharma', role: 'Chairman' },
         { initials: 'AG', name: 'Amit Gupta', role: 'Member' },
         { initials: 'VY', name: 'Vanita Yadav', role: 'Member' },
-        { initials: 'TS', name: 'Tejpal Singh', role: 'Member' },
+        { initials: 'JW', name: 'Tejpal Singh', role: 'Member' },
     ],
     "Corporate Social Responsibility Committee": [
         { initials: 'TS', name: 'Tarun Sharma', role: 'Chairman' },

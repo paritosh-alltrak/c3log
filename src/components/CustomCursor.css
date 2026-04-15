@@ -10,8 +10,17 @@
   z-index: 99999;
   background: transparent;
   border: none;
-  /* Needle tip is at SVG pixel (37,37) inside the 40x40 element.
-     Shift so that point sits exactly at the mouse position. */
-  transform: translate(-37px, -37px);
+  /* Inverted (rotated 180°) + scaled down. Needle tip used to be at (37,37);
+     after rotate(180deg) on a 28x28 box, the tip lands near (3,3). */
+  width: 28px;
+  height: 28px;
+  transform: translate(-3px, -3px) rotate(180deg);
+  transform-origin: center center;
   will-change: left, top;
+}
+
+.custom-cursor svg {
+  width: 28px;
+  height: 28px;
+  display: block;
 }

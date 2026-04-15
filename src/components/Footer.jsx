@@ -1,11 +1,25 @@
 import './Footer.css'
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const goHomeAnchor = (hash) => (e) => {
+    e.preventDefault()
+    if (onNavigate) onNavigate('home')
+    setTimeout(() => {
+      const el = document.querySelector(hash)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }, 50)
+  }
+
+  const goPage = (page) => (e) => {
+    e.preventDefault()
+    if (onNavigate) onNavigate(page)
+  }
+
   return (
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <a href="/" className="footer__logo">
+          <a href="/" className="footer__logo" onClick={goPage('home')}>
             <span style={{ color: '#4f8ef7' }}>C3</span>Logistics
           </a>
           <p className="footer__tagline">
@@ -17,19 +31,19 @@ export default function Footer() {
           <div className="footer__col">
             <h4>Solutions</h4>
             <ul>
-              <li><a href="#journey">Sample Transport</a></li>
-              <li><a href="#journey">Phlebotomy</a></li>
-              <li><a href="#journey">Cold Chain</a></li>
-              <li><a href="#journey">Lab Integration</a></li>
+              <li><a href="#journey" onClick={goHomeAnchor('#journey')}>Sample Transport</a></li>
+              <li><a href="#journey" onClick={goHomeAnchor('#journey')}>Phlebotomy</a></li>
+              <li><a href="#journey" onClick={goHomeAnchor('#journey')}>Cold Chain</a></li>
+              <li><a href="#journey" onClick={goHomeAnchor('#journey')}>Lab Integration</a></li>
             </ul>
           </div>
           <div className="footer__col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#coverage">Coverage</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#contact">Careers</a></li>
+              <li><a href="#about" onClick={goPage('company-profile')}>About</a></li>
+              <li><a href="#coverage" onClick={goHomeAnchor('#coverage')}>Coverage</a></li>
+              <li><a href="#products" onClick={goHomeAnchor('#products')}>Products</a></li>
+              <li><a href="#contact" onClick={goHomeAnchor('#contact')}>Careers</a></li>
             </ul>
           </div>
           <div className="footer__col">
@@ -44,10 +58,10 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p>© 2024 C3Logistics Healthcare Logistics Pvt. Ltd. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} C3Logistics Healthcare Logistics Pvt. Ltd. All rights reserved.</p>
         <div className="footer__bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="#privacy" onClick={goPage('privacy-policy')}>Privacy Policy</a>
+          <a href="#privacy" onClick={goPage('privacy-policy')}>Terms of Service</a>
         </div>
       </div>
     </footer>
