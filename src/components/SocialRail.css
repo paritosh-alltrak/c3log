@@ -8,11 +8,11 @@
   flex-direction: column;
   gap: 8px;
   padding: 10px 6px;
-  background: rgba(20, 26, 45, 0.75);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 24px rgba(13, 38, 72, 0.12);
 }
 
 .social-rail__icon {
@@ -22,13 +22,13 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  color: #a0aec0;
+  color: var(--text-secondary);
   transition: color 0.2s, background 0.2s, transform 0.2s;
 }
 
 .social-rail__icon:hover {
-  color: #fff;
-  background: rgba(79, 142, 247, 0.2);
+  color: var(--accent);
+  background: rgba(30, 111, 217, 0.1);
   transform: translateY(-1px);
 }
 
