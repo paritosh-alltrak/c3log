@@ -9,16 +9,24 @@ const aboutItems = [
   { label: 'Privacy And Policy', page: 'privacy-policy' },
 ]
 
+const careerItems = [
+  { label: 'Working with Credent', page: 'working-with-credent' },
+  { label: 'Current Opening', page: 'current-opening' },
+  { label: 'Job Application', page: 'job-application' },
+]
+
 export default function Navbar({ onNavigate, currentPage }) {
   const [open, setOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [careerOpen, setCareerOpen] = useState(false)
 
   const handleNav = (page, section) => {
     if (onNavigate) onNavigate(page, section)
     setOpen(false)
     setAboutOpen(false)
     setServicesOpen(false)
+    setCareerOpen(false)
   }
 
   const handleHomeLink = (hash) => {
@@ -46,9 +54,7 @@ export default function Navbar({ onNavigate, currentPage }) {
 
         {/* CENTER: NAV LINKS */}
         <ul className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
-          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#journey'); }}>Solutions</a></li>
-          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#coverage'); }}>Coverage</a></li>
-          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#products'); }}>Products</a></li>
+
 
           {/* SERVICES DROPDOWN */}
           <li
@@ -88,6 +94,31 @@ export default function Navbar({ onNavigate, currentPage }) {
 
             <ul className="navbar__dropdown">
               {aboutItems.map((item) => (
+                <li key={item.page}>
+                  <span
+                    className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
+                    onClick={() => handleNav(item.page)}
+                  >
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          {/* CAREER DROPDOWN */}
+          <li
+            className={`navbar__dropdown-wrap ${careerOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setCareerOpen(true)}
+            onMouseLeave={() => setCareerOpen(false)}
+          >
+            <span
+              className={`navbar__dropdown-trigger ${['working-with-credent', 'current-opening', 'job-application'].includes(currentPage) ? 'navbar__link--active' : ''}`}
+            >
+              Career <span className="navbar__chevron">▾</span>
+            </span>
+            <ul className="navbar__dropdown">
+              {careerItems.map((item) => (
                 <li key={item.page}>
                   <span
                     className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
