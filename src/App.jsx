@@ -20,6 +20,9 @@ import PrivacyPolicy from './components/PrivacyPolicy'
 import OurTeam from './components/OurTeam'
 import Services from './components/Services'
 import Training from './components/Training'
+import WorkingWithCredent from './components/WorkingWithCredent'
+import CurrentOpening from './components/CurrentOpening'
+import JobApplication from './components/JobApplication'
 import './App.css'
 
 export default function App() {
@@ -77,6 +80,18 @@ export default function App() {
 
       {page === 'training' && (
         <Training onNavigate={navigate} />
+      )}
+
+      {page === 'working-with-credent' && (
+        <WorkingWithCredent onNavigate={navigate} />
+      )}
+
+      {page === 'current-opening' && (
+        <CurrentOpening onNavigate={navigate} />
+      )}
+
+      {page === 'job-application' && (
+        <JobApplication onNavigate={navigate} />
       )}
       {/* {page === 'our-team' && (
         <div style={{
