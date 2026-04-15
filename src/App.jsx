@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
+import SocialRail from './components/SocialRail'
 import JourneyTracker from './components/JourneyTracker'
 import Hero from './components/Hero'
 import JourneyScene from './components/JourneyScene'
@@ -22,9 +23,11 @@ import './App.css'
 
 export default function App() {
   const [page, setPage] = useState('home')
+  const [serviceSection, setServiceSection] = useState(null)
 
-  const navigate = (target) => {
+  const navigate = (target, section) => {
     setPage(target)
+    if (target === 'services') setServiceSection(section || null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -32,6 +35,7 @@ export default function App() {
     <div className="app">
       <CustomCursor />
       <Navbar onNavigate={navigate} currentPage={page} />
+      <SocialRail />
 
       {page === 'home' && (
         <>
@@ -46,7 +50,7 @@ export default function App() {
           <ClientCarousel />
           <TrustedBy />
           <Contact />
-          <Footer />
+          <Footer onNavigate={navigate} />
         </>
       )}
 
@@ -67,7 +71,7 @@ export default function App() {
       )}
 
       {page === 'services' && (
-        <Services onNavigate={navigate} />
+        <Services onNavigate={navigate} initialSection={serviceSection} />
       )}
       {/* {page === 'our-team' && (
         <div style={{

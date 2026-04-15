@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Navbar.css'
+import { serviceSections } from './Services'
 
 const aboutItems = [
   { label: 'Company Profile', page: 'company-profile' },
@@ -11,11 +12,13 @@ const aboutItems = [
 export default function Navbar({ onNavigate, currentPage }) {
   const [open, setOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
 
-  const handleNav = (page) => {
-    if (onNavigate) onNavigate(page)
+  const handleNav = (page, section) => {
+    if (onNavigate) onNavigate(page, section)
     setOpen(false)
     setAboutOpen(false)
+    setServicesOpen(false)
   }
 
   const handleHomeLink = (hash) => {
@@ -31,7 +34,7 @@ export default function Navbar({ onNavigate, currentPage }) {
     <nav className="navbar">
       <div className="navbar__inner">
 
-        {/* LOGO */}
+        {/* LEFT: LOGO */}
         <span
           className="navbar__logo"
           onClick={() => handleNav('home')}
@@ -41,24 +44,39 @@ export default function Navbar({ onNavigate, currentPage }) {
           <span className="logo-log">Logistics</span>
         </span>
 
-        {/* NAV LINKS */}
+        {/* CENTER: NAV LINKS */}
         <ul className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
+          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#journey'); }}>Solutions</a></li>
+          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#coverage'); }}>Coverage</a></li>
+          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#products'); }}>Products</a></li>
 
-          <li><a onClick={() => handleHomeLink('#journey')}>Solutions</a></li>
-          <li><a onClick={() => handleHomeLink('#coverage')}>Coverage</a></li>
-          <li><a onClick={() => handleHomeLink('#products')}>Products</a></li>
-
-          {/* ✅ NEW: SERVICES */}
-          <li>
+          {/* SERVICES DROPDOWN */}
+          <li
+            className={`navbar__dropdown-wrap ${servicesOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <span
-              className={`navbar__link ${currentPage === 'services' ? 'navbar__link--active' : ''}`}
+              className={`navbar__dropdown-trigger ${currentPage === 'services' ? 'navbar__link--active' : ''}`}
               onClick={() => handleNav('services')}
             >
-              Services
+              Services <span className="navbar__chevron">▾</span>
             </span>
+
+            <ul className="navbar__dropdown">
+              {serviceSections.map((label) => (
+                <li key={label}>
+                  <span
+                    className="navbar__dropdown-item"
+                    onClick={() => handleNav('services', label)}
+                  >
+                    {label}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </li>
 
-          {/* ABOUT DROPDOWN */}
           <li
             className={`navbar__dropdown-wrap ${aboutOpen ? 'navbar__dropdown-wrap--open' : ''}`}
             onMouseEnter={() => setAboutOpen(true)}
@@ -72,10 +90,7 @@ export default function Navbar({ onNavigate, currentPage }) {
               {aboutItems.map((item) => (
                 <li key={item.page}>
                   <span
-                    className={`navbar__dropdown-item ${currentPage === item.page
-                        ? 'navbar__dropdown-item--active'
-                        : ''
-                      }`}
+                    className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
                     onClick={() => handleNav(item.page)}
                   >
                     {item.label}
@@ -85,19 +100,10 @@ export default function Navbar({ onNavigate, currentPage }) {
             </ul>
           </li>
 
-          <li><a onClick={() => handleHomeLink('#contact')}>Contact</a></li>
-
+          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#contact'); }}>Contact</a></li>
         </ul>
 
-        {/* CTA */}
-        <button
-          className="navbar__cta"
-          onClick={() => handleNav('services')}
-        >
-          Get in touch
-        </button>
-
-        {/* MOBILE MENU */}
+        {/* RIGHT (mobile menu toggle) */}
         <button
           className="navbar__hamburger"
           onClick={() => setOpen(!open)}
