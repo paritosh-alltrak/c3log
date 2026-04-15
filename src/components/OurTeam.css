@@ -1,0 +1,109 @@
+.team-page {
+    background: #f4f7fb;
+    min-height: 100vh;
+    padding-top: 64px;
+}
+
+/* HERO */
+.team-hero {
+    background: linear-gradient(135deg, #0a0f1e, #1a2a4a);
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.team-hero__inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.team-hero h1 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+}
+
+.team-hero p {
+    max-width: 700px;
+    color: #cbd5e0;
+    line-height: 1.6;
+}
+
+/* Breadcrumb */
+.team-breadcrumb {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    display: flex;
+    gap: 8px;
+}
+
+.team-breadcrumb span:first-child {
+    cursor: pointer;
+    color: #4f8ef7;
+}
+
+/* SECTION */
+.team-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a2a4a;
+}
+
+/* GRID */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* CARD */
+.team-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* AVATAR */
+.team-avatar {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    background: #1a4fa3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* TEXT */
+.team-card h3 {
+    font-size: 1rem;
+    color: #1a2a4a;
+    margin-bottom: 6px;
+}
+
+.team-card p {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .team-hero h1 {
+        font-size: 1.8rem;
+    }
+}

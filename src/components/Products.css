@@ -1,0 +1,275 @@
+/* ── Products — Milky-Way Galaxy Layout ── */
+
+.products {
+  background: #080d1a;
+  padding: 100px 24px 120px;
+}
+
+.products__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 72px;
+}
+
+.products__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.products__title em {
+  font-style: italic;
+  color: #4f8ef7;
+}
+
+.products__desc {
+  color: #a0aec0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────
+   Galaxy container
+───────────────────────────────────────── */
+.products__galaxy {
+  position: relative;
+  width: min(640px, 92vw);
+  height: min(640px, 92vw);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.products__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ─────────────────────────────────────────
+   Stars
+───────────────────────────────────────── */
+.pstar { opacity: 0.18; }
+
+.pstar--0 { animation: tw0 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
+.pstar--1 { animation: tw1 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
+.pstar--2 { animation: tw2 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
+.pstar--3 { animation: tw3 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
+
+@keyframes tw0 { from { opacity: 0.1;  } to { opacity: 0.6;  } }
+@keyframes tw1 { from { opacity: 0.16; } to { opacity: 0.48; } }
+@keyframes tw2 { from { opacity: 0.06; } to { opacity: 0.5;  } }
+@keyframes tw3 { from { opacity: 0.2;  } to { opacity: 0.7;  } }
+
+/* ─────────────────────────────────────────
+   Nebula / core
+───────────────────────────────────────── */
+.gx-nebula {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nebulaPulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaPulse {
+  from { transform: scale(1);    opacity: 0.72; }
+  to   { transform: scale(1.08); opacity: 1;    }
+}
+
+.gx-core-glow {
+  animation: corePulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes corePulse {
+  from { opacity: 0.5;  transform: scale(1);    }
+  to   { opacity: 0.88; transform: scale(1.12); }
+}
+
+.gx-core-shine {
+  animation: shinePulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes shinePulse {
+  from { opacity: 0.65; transform: scale(0.88); }
+  to   { opacity: 1;    transform: scale(1.12); }
+}
+
+/* ─────────────────────────────────────────
+   Orbital rings — rotate at different speeds
+───────────────────────────────────────── */
+.gx-ring { }
+
+.gx-ring--1 { animation: ringCW  25s linear infinite; }
+.gx-ring--2 { animation: ringCCW 44s linear infinite; }
+.gx-ring--3 { animation: ringCW  75s linear infinite; }
+
+@keyframes ringCW  { to { transform: rotate(360deg);  } }
+@keyframes ringCCW { to { transform: rotate(-360deg); } }
+
+/* ─────────────────────────────────────────
+   Node halos
+───────────────────────────────────────── */
+.gx-halo {
+  animation: haloPulse 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+  from { transform: scale(0.82); opacity: 0.18; }
+  to   { transform: scale(1.18); opacity: 0.45; }
+}
+
+/* ─────────────────────────────────────────
+   Center badge (HTML)
+───────────────────────────────────────── */
+.products__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.55) 0%,
+    rgba(79, 142, 247, 0.22) 60%,
+    transparent 100%
+  );
+  border: 1px solid rgba(167, 139, 250, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  z-index: 10;
+  animation: centerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes centerGlow {
+  from {
+    box-shadow:
+      0 0 18px rgba(124, 58, 237, 0.4),
+      0 0 48px rgba(79, 142, 247, 0.12),
+      inset 0 0 18px rgba(124, 58, 237, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 38px rgba(124, 58, 237, 0.7),
+      0 0 90px rgba(79, 142, 247, 0.28),
+      inset 0 0 28px rgba(124, 58, 237, 0.35);
+  }
+}
+
+/* Slowly spinning outer ring decoration */
+.products__center-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1px dashed rgba(124, 58, 237, 0.25);
+  animation: centerRingSpin 10s linear infinite;
+}
+
+@keyframes centerRingSpin {
+  to { transform: rotate(360deg); }
+}
+
+.products__center-icon {
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.products__center-label {
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   Product node cards (HTML)
+───────────────────────────────────────── */
+.products__node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  animation: nodeFloat 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes nodeFloat {
+  from { transform: translate(-50%, -50%) translateY(0);    }
+  to   { transform: translate(-50%, -50%) translateY(-5px); }
+}
+
+.products__node-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  /* glassmorphism */
+  background: rgba(8, 13, 26, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* fallback border */
+  border: 1px solid rgba(79, 142, 247, 0.3);
+  /* accent border — browsers that support color-mix */
+  border-color: color-mix(in srgb, var(--accent, #4f8ef7) 40%, transparent);
+  border-radius: 14px;
+  padding: 12px 14px;
+  width: 102px;
+  cursor: default;
+  transition: box-shadow 0.3s, background 0.3s, border-color 0.3s;
+  /* fallback glow */
+  box-shadow: 0 0 14px rgba(79, 142, 247, 0.18);
+  /* accent glow */
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent, #4f8ef7) 25%, transparent),
+              inset 0 0 10px color-mix(in srgb, var(--accent, #4f8ef7) 6%, transparent);
+}
+
+.products__node-card:hover {
+  background: rgba(8, 13, 26, 0.9);
+  border-color: color-mix(in srgb, var(--accent, #4f8ef7) 70%, transparent);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent, #4f8ef7) 50%, transparent),
+              inset 0 0 14px color-mix(in srgb, var(--accent, #4f8ef7) 12%, transparent);
+}
+
+.products__node-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.products__node-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  line-height: 1.25;
+}
+
+.products__node-desc {
+  font-size: 0.57rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+@media (max-width: 520px) {
+  .products__node-card {
+    width: 76px;
+    padding: 8px 6px;
+  }
+  .products__node-icon  { font-size: 1.1rem; }
+  .products__node-name  { font-size: 0.58rem; }
+  .products__node-desc  { display: none; }
+  .products__center     { width: 66px; height: 66px; }
+  .products__center-icon { font-size: 1.25rem; }
+  .products__center-label { font-size: 0.5rem; }
+}

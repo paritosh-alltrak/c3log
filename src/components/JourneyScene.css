@@ -1,0 +1,269 @@
+/* ── Section wrapper ── */
+.js-section {
+  background: var(--navy-light);
+  padding: 80px 24px 0;
+}
+
+.js-section__header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.js-section__title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #1e3a6e;
+  margin-bottom: 8px;
+}
+
+.js-section__sub {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #4f8ef7;
+  font-family: 'Fraunces', serif;
+}
+
+/* ── Scene canvas ── */
+.js-scene {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 340px;
+  background: #dce9ff;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(79,142,247,0.2);
+  border-bottom: none;
+}
+
+/* Sky gradient */
+.js-sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #c8deff 0%, #dce9ff 60%, #e8f0ff 100%);
+}
+
+/* ── Ground ── */
+.js-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #b8cfe8;
+  border-top: 2px solid rgba(79,142,247,0.3);
+}
+
+/* ── Generic building ── */
+.js-building {
+  position: absolute;
+  bottom: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.js-building__body {
+  background: #a8bfe0;
+  border: 1px solid rgba(79,142,247,0.25);
+  width: 100%;
+  flex: 1;
+}
+
+.js-building__accent-line {
+  width: 60%;
+  height: 3px;
+  background: #4f8ef7;
+  margin-bottom: 0;
+  align-self: center;
+}
+
+.js-building__roof {
+  width: 100%;
+  height: 4px;
+  background: #4f8ef7;
+}
+
+/* Windows grid — dots */
+.js-windows {
+  display: grid;
+  gap: 5px;
+  padding: 10px 8px;
+}
+.js-windows--3x4 { grid-template-columns: repeat(3,6px); grid-template-rows: repeat(4,6px); }
+.js-windows--2x5 { grid-template-columns: repeat(2,6px); grid-template-rows: repeat(5,6px); }
+.js-windows--3x3 { grid-template-columns: repeat(3,6px); grid-template-rows: repeat(3,6px); }
+.js-windows--2x3 { grid-template-columns: repeat(2,6px); grid-template-rows: repeat(3,6px); }
+
+.js-windows::before,
+.js-windows > * {
+  content: '';
+  display: block;
+}
+
+/* Trick: use box-shadow to fill all cells */
+.js-windows--3x4 {
+  width: 28px; height: 54px;
+  background-image: radial-gradient(circle, rgba(79,142,247,0.7) 2px, transparent 2px);
+  background-size: 11px 11px;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+.js-windows--2x5 {
+  width: 19px; height: 65px;
+  background-image: radial-gradient(circle, rgba(79,142,247,0.6) 2px, transparent 2px);
+  background-size: 11px 11px;
+  background-repeat: repeat;
+}
+.js-windows--3x3 {
+  width: 28px; height: 43px;
+  background-image: radial-gradient(circle, rgba(79,142,247,0.65) 2px, transparent 2px);
+  background-size: 11px 11px;
+  background-repeat: repeat;
+}
+.js-windows--2x3 {
+  width: 19px; height: 43px;
+  background-image: radial-gradient(circle, rgba(79,142,247,0.55) 2px, transparent 2px);
+  background-size: 11px 11px;
+  background-repeat: repeat;
+}
+
+.js-building__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #4f8ef7;
+  margin-top: 6px;
+  white-space: nowrap;
+  position: absolute;
+  bottom: -20px;
+}
+
+/* ── HOME building ── */
+.js-building--home {
+  left: 60px;
+  width: 72px;
+  height: 100px;
+}
+.js-building--home .js-building__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #9bb5d8;
+}
+.js-home-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── City buildings ── */
+.js-building--b1 {
+  left: 200px;
+  width: 56px;
+  height: 170px;
+}
+.js-building--b1 .js-building__body { display:flex; align-items:flex-start; justify-content:center; padding-top:12px; }
+
+.js-building--b2 {
+  left: 270px;
+  width: 48px;
+  height: 130px;
+}
+.js-building--b2 .js-building__body { display:flex; align-items:flex-start; justify-content:center; padding-top:10px; }
+
+.js-building--b3 {
+  left: 340px;
+  width: 64px;
+  height: 150px;
+}
+.js-building--b3 .js-building__body { display:flex; align-items:flex-start; justify-content:center; padding-top:10px; }
+
+.js-building--b4 {
+  left: 430px;
+  width: 44px;
+  height: 110px;
+}
+.js-building--b4 .js-building__body { display:flex; align-items:flex-start; justify-content:center; padding-top:10px; }
+
+/* ── LAB RECEPTION building ── */
+.js-building--lab {
+  right: 0;
+  width: 230px;
+  height: 270px;
+  border-radius: 4px 4px 0 0;
+}
+
+.js-building--lab .js-building__body {
+  background: #8fb3d8;
+  border-color: rgba(79,142,247,0.3);
+}
+
+.js-lab-cross {
+  position: absolute;
+  top: -28px;
+  right: 24px;
+}
+
+.js-lab-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.js-lab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.js-lab-chip {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(79,142,247,0.3);
+  border-radius: 4px;
+  padding: 5px 4px;
+  font-size: 0.48rem;
+  color: #1e3a6e;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.js-lab-label {
+  bottom: -22px;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Scooter ── */
+.js-scooter {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  animation: scoot-ride 18s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(79,142,247,0.5));
+  z-index: 10;
+}
+
+@keyframes scoot-ride {
+  0%   { left: 30px; }
+  8%   { left: 120px; }
+  85%  { left: calc(100% - 340px); }
+  95%  { left: calc(100% - 310px); }
+  100% { left: calc(100% - 310px); }
+}
+
+/* subtle vertical bounce while riding */
+.js-scooter svg {
+  animation: scooter-bounce 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes scooter-bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-2px); }
+}

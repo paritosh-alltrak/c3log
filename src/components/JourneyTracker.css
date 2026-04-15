@@ -1,0 +1,71 @@
+.jt {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: #080e1f;
+  border-bottom: 1px solid rgba(79, 142, 247, 0.12);
+  height: 100px;
+  overflow: visible;
+  /* clip scooter as it exits edges */
+}
+
+.jt__inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 48px;
+}
+
+/* Horizontal track line */
+.jt__line {
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  right: 48px;
+  height: 1px;
+  background: rgba(79, 142, 247, 0.25);
+  transform: translateY(-50%);
+}
+
+/* Each stop dot + label */
+.jt__stop {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.jt__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4f8ef7;
+  box-shadow: 0 0 6px rgba(79, 142, 247, 0.6);
+  flex-shrink: 0;
+}
+
+.jt__label {
+  position: absolute;
+  top: 14px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #4f8ef7;
+  white-space: nowrap;
+}
+
+/* Scooter — position driven by scroll via inline style */
+.jt__scooter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 0 8px rgba(79, 142, 247, 0.55));
+  pointer-events: none;
+  transition: left 0.12s ease-out;
+}

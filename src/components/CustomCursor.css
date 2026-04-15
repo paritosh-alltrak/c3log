@@ -1,0 +1,17 @@
+/* Hide default cursor everywhere */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* Cursor wrapper — fixed, no background, no border */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  background: transparent;
+  border: none;
+  /* Needle tip is at SVG pixel (37,37) inside the 40x40 element.
+     Shift so that point sits exactly at the mouse position. */
+  transform: translate(-37px, -37px);
+  will-change: left, top;
+}
