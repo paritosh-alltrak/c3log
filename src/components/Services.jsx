@@ -1,176 +1,614 @@
 import { useState, useEffect } from "react";
 import "./Services.css";
+import LogisticsMap from "./LogisticsMap";
 
 const servicesData = {
-    "Rider App Tos": {
-        title: "C3Logistics.co.in (Credent Connect N Care Ltd) Terms of Service for Rider App.",
-        content: `
-    <h3>DEFINITIONS</h3>
-    <p>Credent Rider App allows its own riders to perform following tasks:</p>
-
-    <ul>
-      <li>Perform the pre-assigned task via app.</li>
-      <li>Create the new task in app based on on-call assignments.</li>
-      <li>Pick-up the diagnostics samples from the assigned collection centres operated by company clients.</li>
-      <li>Handover the diagnostics samples to riders, hubs or labs and ensure that all samples reach to designated place.</li>
-      <li>Riders / Runners are company employees which use Rider app to perform day to day on-field task.</li>
-    </ul>
-
-    <p>By accessing our Rider App or our service, you accept this Privacy Policy and provide consent to provide required permission as needed by app to perform necessary tasks.</p>
-
-    <p>If you do not agree to be bound by these Terms of Use in their entirety, you may choose not use the Credent Rider App.</p>
-
-    <h3>ABOUT THE SERVICE</h3>
-    <p>The Service allows you to:</p>
-
-    <ul>
-      <li>Perform the pre-assigned task via app.</li>
-      <li>Create the new task in app based on on-call assignments.</li>
-      <li>Pick-up the diagnostics samples from assigned centres.</li>
-      <li>Handover samples to riders, hubs or labs.</li>
-    </ul>
-
-    <p><strong>REGISTRATION; RULES FOR USER CONDUCT AND USE OF THE SERVICE</strong></p>
-    <p>You need to be an internal user which shall grant you access to our Rider App.</p>
-
-    <h3>USE RESTRICTIONS</h3>
-    <p>Your permission to use the Rider App is conditioned upon the following restrictions:</p>
-
-    <ul>
-      <li>Access the Service for any reason other than your professional requirements.</li>
-      <li>Collect or harvest any personal data of any user of the Service.</li>
-      <li>Use the Service for solicitation of business outside authorized scope.</li>
-      <li>Distribute any parts of the Service without permission.</li>
-      <li>Use the Service for unlawful purposes.</li>
-      <li>Attempt to harass, abuse or harm another person.</li>
-      <li>Provide false or inaccurate information.</li>
-      <li>Interfere with proper functioning of the Service.</li>
-    </ul>
-
-    <h3>MODIFICATION OF TERMS OF USE</h3>
-    <p>We can amend these Terms of Use at any time. Continued use of the Service signifies your agreement to updated terms.</p>
-  `
+    "Rider App": {
+        title: "Rider App",
+        subtitle: "Smart. Connected. Always On-Field.",
+        stats: [
+            { value: "2500+", label: "Active Riders" },
+            { value: "120+", label: "Cities Live" },
+            { value: "15 min", label: "Avg Response" },
+            { value: "99.9%", label: "Uptime" },
+        ],
+        journey: [
+            { num: 1, title: "Login", desc: "Rider logs into the app" },
+            { num: 2, title: "Task Received", desc: "Auto-assigned pickup task" },
+            { num: 3, title: "Navigate", desc: "GPS-based route" },
+            { num: 4, title: "Pickup", desc: "Sample collected" },
+            { num: 5, title: "In Transit", desc: "Live location tracked" },
+            { num: 6, title: "Handover", desc: "Delivered to hub/lab" },
+        ],
+        whyChoose: [
+            "GPS-enabled live tracking",
+            "Auto task assignment",
+            "Offline-friendly for low network areas",
+            "Integrated sample handover confirmation",
+            "Real-time status updates to clients",
+        ],
+        highlights: [
+            { icon: "📱", title: "Smart App", desc: "Built for riders on the move" },
+            { icon: "📍", title: "Live Tracking", desc: "GPS location in real time" },
+            { icon: "🧾", title: "Task Control", desc: "Manage all assignments" },
+            { icon: "🔒", title: "Secure Access", desc: "Role-based authentication" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🔬", label: "Diagnostic Labs" },
+            { icon: "💊", label: "Pharma" },
+            { icon: "🚚", label: "Logistics Partners" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "24/7", label: "Operations" },
+            { value: "Real-time", label: "Tracking" },
+        ],
+        comparison: [
+            { feature: "GPS Live Tracking", credent: true, others: false },
+            { feature: "Offline Mode", credent: true, others: false },
+            { feature: "Auto Task Assignment", credent: true, others: false },
+            { feature: "Sample Handover Logs", credent: true, others: false },
+            { feature: "Role-Based Access", credent: true, others: true },
+        ],
+        cta: {
+            title: "Want to Digitize Your Fleet?",
+            text: "Empower your riders with a smart, always-on app.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Riders" },
+            { icon: "🛡️", title: "Secure Handling" },
+            { icon: "📄", title: "Digital Logs" },
+            { icon: "🎧", title: "24/7 Support" },
+        ],
     },
+
     "Field Executives (Bikers)": {
         title: "Field Executives (Bikers)",
-        content: `
-      <p>Credent Group maintains a team of around 1350 bikers, each one thoroughly trained and carefully vetted through a rigorous process. Each member of the biker team is allotted a specific territory and provides fast, efficient services to clients in his area. A call from a client starts the process with the nearest field biker contacted via phone and the biker can find the exact location using GPS and maps and reach it within minutes.</p>
-
-      <p>Our biker services handle pickup services. This may involve a package, a document, a purchase or a delivery as the case may be. Trained and knowledgeable, each biker knows exactly what to do and carries out the procedure efficiently within short span of his arrival at the location.</p>
-
-      <p>Whether it is pickup and delivery from one location to another or couriering a package, it is done quickly and professionally. Clients receive complete updates through a tracking service. Basic services are covered in our standard rate for each pickup/delivery for locations across India.</p>
-    `,
+        subtitle: "Fast. Reliable. Everywhere in India.",
+        stats: [
+            { value: "1350+", label: "Trained Bikers" },
+            { value: "120+", label: "Cities Covered" },
+            { value: "30 min", label: "Avg Response" },
+            { value: "100%", label: "Verified Team" },
+        ],
+        journey: [
+            { num: 1, title: "Request", desc: "Client raises pickup" },
+            { num: 2, title: "Dispatch", desc: "Nearest biker assigned" },
+            { num: 3, title: "Arrival", desc: "Reach location via GPS" },
+            { num: 4, title: "Pickup", desc: "Package/sample collected" },
+            { num: 5, title: "Transit", desc: "Live tracking enabled" },
+            { num: 6, title: "Delivered", desc: "Drop confirmed" },
+        ],
+        whyChoose: [
+            "1350+ trained and vetted bikers",
+            "Pan-India coverage",
+            "GPS-based nearest dispatch",
+            "Same-day pickup & delivery",
+            "Live shipment tracking",
+        ],
+        highlights: [
+            { icon: "🏍️", title: "Fleet of Bikers", desc: "Territory-based coverage" },
+            { icon: "📍", title: "GPS Dispatch", desc: "Nearest rider allocation" },
+            { icon: "⚡", title: "Fast Response", desc: "Quick turnaround" },
+            { icon: "✅", title: "Verified Staff", desc: "Background-checked team" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🔬", label: "Diagnostic Labs" },
+            { icon: "🏢", label: "Corporates" },
+            { icon: "💊", label: "Pharma" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "24/7", label: "Operations" },
+            { value: "Live", label: "Tracking" },
+        ],
+        comparison: [
+            { feature: "Trained Bikers", credent: true, others: false },
+            { feature: "Live GPS Tracking", credent: true, others: false },
+            { feature: "Nationwide Coverage", credent: true, others: false },
+            { feature: "Same-day Delivery", credent: true, others: true },
+            { feature: "Background Verified", credent: true, others: false },
+        ],
+        cta: {
+            title: "Need Fast, Reliable Pickup?",
+            text: "Our biker network is ready across India.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Bikers" },
+            { icon: "🛡️", title: "Safe Handling" },
+            { icon: "📄", title: "Digital Proof of Delivery" },
+            { icon: "🎧", title: "Dedicated Support" },
+        ],
     },
 
     "Phlebotomist Services": {
         title: "Phlebotomist Services",
-        content: `
-      <p>Credent has a team of 1550 phlebotomists and the number is growing across major and minor cities in India. Phlebotomists in our employ receive thorough training to be precise and meticulous in performance of their duties. Credent Connect N Care with its expertise in temperature controlled packaging guarantees that samples are preserved while in transit. We follow internationally recognized standards for this service to satisfy highest quality requirements of hospitals and laboratories as well as clinical trials institutions and pharmaceutical companies.</p>
-
-      <p>Phlebotomists are trained to draw blood samples expertly with minimum discomfort to the patient and then store such samples in temperature controlled packaging. Our phlebotomists are also expert in observing the patient during the process and in rendering any assistance that may be required should there be any adverse reaction. They take care of sample collection, packaging and forwarding procedures with documentation if they are in the field.</p>
-
-      <p>We offer trained phlebotomists who have through knowledge about new technical standards and test as well as the new NABL guidelines. You may employ such trained phlebotomists or, if you are planning to recruit people, we can train them to enhance their skill levels.</p>
-    `,
+        subtitle: "Safe Collection. Secure Handling. Timely Delivery.",
+        stats: [
+            { value: "1550+", label: "Trained Phlebotomists" },
+            { value: "120+", label: "Cities Covered" },
+            { value: "60 min", label: "Avg Pickup Time" },
+            { value: "100%", label: "Compliance Ready" },
+        ],
+        journey: [
+            { num: 1, title: "Booking", desc: "Request received from client" },
+            { num: 2, title: "Assigned", desc: "Nearest phlebotomist assigned" },
+            { num: 3, title: "Collection", desc: "Sample collected with care" },
+            { num: 4, title: "Packaging", desc: "Temperature-controlled packaging" },
+            { num: 5, title: "Transit", desc: "Cold-chain transport" },
+            { num: 6, title: "Delivered", desc: "Delivered to lab/facility" },
+        ],
+        whyChoose: [
+            "Highly trained and verified phlebotomists",
+            "Minimal discomfort & maximum care",
+            "Temperature-controlled sample handling",
+            "Real-time tracking & status updates",
+            "Strict adherence to NABL guidelines",
+        ],
+        highlights: [
+            { icon: "🩸", title: "Expert Collection", desc: "Skilled technique, minimal pain" },
+            { icon: "📍", title: "Pan-India Coverage", desc: "Serving major & minor cities" },
+            { icon: "❄️", title: "Cold Chain Assurance", desc: "Temperature-safe transit" },
+            { icon: "✅", title: "NABL Compliant", desc: "Meets international standards" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🔬", label: "Diagnostic Labs" },
+            { icon: "🧪", label: "Clinical Research Orgs" },
+            { icon: "💊", label: "Pharmaceutical Companies" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "24/7", label: "Operations" },
+            { value: "Real-time", label: "Tracking" },
+        ],
+        comparison: [
+            { feature: "Trained Phlebotomists", credent: true, others: false },
+            { feature: "Cold Chain Logistics", credent: true, others: false },
+            { feature: "Nationwide Coverage", credent: true, others: false },
+            { feature: "Real-time Tracking", credent: true, others: false },
+            { feature: "NABL Compliance", credent: true, others: true },
+        ],
+        cta: {
+            title: "Need Reliable Sample Collection?",
+            text: "We're here to help you deliver safe, accurate and timely results.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified & Background Checked Staff" },
+            { icon: "🛡️", title: "Precision & Safety" },
+            { icon: "📄", title: "Digital Reports & Documentation" },
+            { icon: "🎧", title: "Dedicated Support Team" },
+        ],
     },
 
     "Man Power Outsourcing": {
         title: "Man Power Outsourcing",
-        content: `
-      <p>Credent specializes in offering manpower on contract, one-off and temporary basis with accent on serving research institutions, pharmaceuticals, hospitals and laboratory segments. Credent has a rigorous process of selection of candidates for specific skills and each one is chosen after interviews and verification. Thereafter, each one chosen to be part of our team undergoes specialized training to enhance skills. We also conduct background checks and vet each candidate.</p>
-
-      <p>We offer manpower services on the best terms. Clients can intimate us in advance and we will make arrangements to provide candidates for selection. Clients may phone us in case of emergency and we will provide people in the shortest possible time. You will find that people we recommend to fill temporary posts or longer duration posts get right down to work in the most efficient way. You will find that outsourcing your manpower requirements to us saves time and money in addition to getting the job done far better.</p>
-    `,
+        subtitle: "Skilled. Vetted. Ready to Deploy.",
+        stats: [
+            { value: "5000+", label: "Placements" },
+            { value: "120+", label: "Client Sites" },
+            { value: "48 hrs", label: "Fast Deployment" },
+            { value: "100%", label: "Background Verified" },
+        ],
+        journey: [
+            { num: 1, title: "Requirement", desc: "Client shares need" },
+            { num: 2, title: "Shortlist", desc: "Candidates screened" },
+            { num: 3, title: "Interview", desc: "Skill evaluation" },
+            { num: 4, title: "Verify", desc: "Background checks" },
+            { num: 5, title: "Train", desc: "Role-specific training" },
+            { num: 6, title: "Deploy", desc: "Onboarded at site" },
+        ],
+        whyChoose: [
+            "Rigorous candidate selection",
+            "Background verification done",
+            "Specialized training before deployment",
+            "Emergency staffing within hours",
+            "Long-term and temporary options",
+        ],
+        highlights: [
+            { icon: "🧑‍💼", title: "Skilled Workforce", desc: "Hand-picked professionals" },
+            { icon: "📋", title: "Verified Records", desc: "Full background checks" },
+            { icon: "🎓", title: "Trained Staff", desc: "Role-ready personnel" },
+            { icon: "⚡", title: "Fast Deployment", desc: "Quick turnaround" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🔬", label: "Laboratories" },
+            { icon: "💊", label: "Pharmaceuticals" },
+            { icon: "🧪", label: "Research Institutes" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "48h", label: "Turnaround" },
+            { value: "Full", label: "Compliance" },
+        ],
+        comparison: [
+            { feature: "Background Verified", credent: true, others: false },
+            { feature: "Pre-deployment Training", credent: true, others: false },
+            { feature: "Emergency Staffing", credent: true, others: false },
+            { feature: "Industry-Specific Hiring", credent: true, others: true },
+            { feature: "Pan-India Network", credent: true, others: false },
+        ],
+        cta: {
+            title: "Need Skilled Staff Fast?",
+            text: "Outsource manpower and save time, cost, and effort.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Staff" },
+            { icon: "🛡️", title: "Compliance Ready" },
+            { icon: "📄", title: "Clear Documentation" },
+            { icon: "🎧", title: "Account Support" },
+        ],
     },
 
     "Home Collection": {
         title: "Home Collection",
-        content: `
-      <p>Credent offers home collection services in a big way across the length and width of India. We have an established presence in major cities in each state across India. At present we have more than 278 centers and the number is growing every day.</p>
-
-      <p>Our home collection service covers collection of blood/urine samples for laboratory analysis. This service is available to individuals who may not have the time to visit a laboratory or patients who are not able to undertake travel because they are ill or bedridden. Samples collected are tested and analyzed by our personnel in our associate labs to assure accurate test results. All this is handled when our home collection executive visits you.</p>
-
-      <p>We also offer home collection services to hospitals and laboratories to enhance their services and to help them rope in more customers.</p>
-    `,
+        subtitle: "Tests at Your Doorstep. Anytime, Anywhere.",
+        stats: [
+            { value: "278+", label: "Collection Centers" },
+            { value: "120+", label: "Cities Covered" },
+            { value: "45 min", label: "Avg Visit Time" },
+            { value: "100%", label: "Accurate Reports" },
+        ],
+        journey: [
+            { num: 1, title: "Book", desc: "Schedule at your convenience" },
+            { num: 2, title: "Assigned", desc: "Executive assigned" },
+            { num: 3, title: "Visit", desc: "At-home collection" },
+            { num: 4, title: "Packaging", desc: "Safe sample handling" },
+            { num: 5, title: "Transit", desc: "Cold chain delivery" },
+            { num: 6, title: "Reports", desc: "Digital reports shared" },
+        ],
+        whyChoose: [
+            "278+ centers across India",
+            "Ideal for elderly & bedridden patients",
+            "Certified, trained executives",
+            "Accurate lab-tested results",
+            "Digital reports delivery",
+        ],
+        highlights: [
+            { icon: "🏠", title: "At-Home Service", desc: "Samples collected at doorstep" },
+            { icon: "🧪", title: "Accurate Testing", desc: "Partnered lab network" },
+            { icon: "📱", title: "Digital Reports", desc: "Delivered online" },
+            { icon: "❄️", title: "Safe Transit", desc: "Cold-chain protection" },
+        ],
+        industries: [
+            { icon: "👤", label: "Individuals" },
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🔬", label: "Laboratories" },
+            { icon: "🏢", label: "Corporate Clients" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "24/7", label: "Booking" },
+            { value: "Digital", label: "Reports" },
+        ],
+        comparison: [
+            { feature: "Pan-India Centers", credent: true, others: false },
+            { feature: "Trained Executives", credent: true, others: false },
+            { feature: "Cold Chain Transit", credent: true, others: false },
+            { feature: "Digital Reports", credent: true, others: true },
+            { feature: "Elderly-friendly Service", credent: true, others: false },
+        ],
+        cta: {
+            title: "Book a Home Collection Today",
+            text: "Quick. Safe. Convenient tests at home.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Staff" },
+            { icon: "🛡️", title: "Safe Handling" },
+            { icon: "📄", title: "Digital Reports" },
+            { icon: "🎧", title: "Customer Support" },
+        ],
     },
 
     "Cold Chain Logistics": {
         title: "Cold Chain Logistics",
-        content: `
-      <p>We provide temperature-controlled logistics solutions for transporting sensitive medical and pharmaceutical products. Our system ensures safe handling, real-time tracking, and compliance with international standards.</p>
-    `,
+        subtitle: "Temperature-Safe. Globally Compliant.",
+        stats: [
+            { value: "100%", label: "Temp Compliance" },
+            { value: "120+", label: "Routes Covered" },
+            { value: "24/7", label: "Live Monitoring" },
+            { value: "ISO", label: "Certified" },
+        ],
+        journey: [
+            { num: 1, title: "Pickup", desc: "Sample collected" },
+            { num: 2, title: "Packaging", desc: "Insulated containers" },
+            { num: 3, title: "Monitor", desc: "Temperature logged" },
+            { num: 4, title: "Transit", desc: "GPS tracked" },
+            { num: 5, title: "Checkpoint", desc: "Hub verification" },
+            { num: 6, title: "Delivered", desc: "Delivered safely" },
+        ],
+        whyChoose: [
+            "End-to-end temperature monitoring",
+            "Real-time shipment tracking",
+            "Meets international standards",
+            "Safe handling of sensitive cargo",
+            "Experienced cold-chain team",
+        ],
+        highlights: [
+            { icon: "❄️", title: "Temp Control", desc: "Insulated packaging" },
+            { icon: "📡", title: "Live Monitoring", desc: "IoT-enabled tracking" },
+            { icon: "🌐", title: "Global Standards", desc: "ISO & WHO compliant" },
+            { icon: "🛡️", title: "Safe Transit", desc: "Zero-tolerance handling" },
+        ],
+        industries: [
+            { icon: "💊", label: "Pharma" },
+            { icon: "🧬", label: "Biotech" },
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🧪", label: "Vaccines & Reagents" },
+        ],
+        coverage: [
+            { value: "120+", label: "Routes" },
+            { value: "24/7", label: "Monitoring" },
+            { value: "ISO", label: "Certified" },
+        ],
+        comparison: [
+            { feature: "Temperature Monitoring", credent: true, others: false },
+            { feature: "Real-time GPS", credent: true, others: false },
+            { feature: "Global Compliance", credent: true, others: false },
+            { feature: "Insulated Packaging", credent: true, others: true },
+            { feature: "Sensitive Cargo Handling", credent: true, others: false },
+        ],
+        cta: {
+            title: "Ship Sensitive Cargo With Confidence",
+            text: "Our cold-chain network keeps every batch safe.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Drivers" },
+            { icon: "🛡️", title: "Certified Packaging" },
+            { icon: "📄", title: "Digital Temperature Logs" },
+            { icon: "🎧", title: "24/7 Control Room" },
+        ],
     },
 
     "Corporate Health": {
         title: "Corporate Health",
-        content: `
-      <p>We conduct a corporate health program to ensure better health for the workforce in an organization. Health and wellness programs should be an integral part of the company's global strategy to promote a healthy workplace. A healthy worker is more efficient, has more energy, the risk of accidents decreases and stress situations are managed in a more positive way. According to the WHO report, adequate nutrition and the practice of physical activity can increase productivity levels by 20%. For these reasons, more and more organizations are being aware of implementing corporate health measures, thus giving importance to their most important capital: people.</p>
-
-      <h3>Benefits for employees</h3>
-      <ul>
-        <li>Reduction of stress at workplace.</li>
-        <li>Increase concentration and improves performance of the employees during work.</li>
-        <li>Prevention and improvement of muscular and skeletal disorders: lumbago, sciatica, contractures, tendinitis, back injuries …</li>
-        <li>The worker will feel care and importance for the company in which he/she works.</li>
-      </ul>
-
-      <h3>Benefits for the company</h3>
-      <ul>
-        <li>Increase the Corporate Social Responsibility of the company.</li>
-        <li>It will be easier to attract and retain talent in the company.</li>
-        <li>Reduction of indirect costs related to work incapacity, absenteeism …</li>
-        <li>Greater commitment on the part of the worker and greater identification with the company.</li>
-        <li>Improvement of the image of the company both internally and externally.</li>
-        <li>There are several programs to promote the corporate health of work teams.</li>
-      </ul>
-    `,
+        subtitle: "Healthier Teams. Higher Productivity.",
+        stats: [
+            { value: "500+", label: "Companies Served" },
+            { value: "1L+", label: "Employees Screened" },
+            { value: "20%", label: "Productivity Lift" },
+            { value: "100%", label: "Confidential" },
+        ],
+        journey: [
+            { num: 1, title: "Consult", desc: "Understand company needs" },
+            { num: 2, title: "Plan", desc: "Customized program" },
+            { num: 3, title: "Screen", desc: "On-site health check-ups" },
+            { num: 4, title: "Report", desc: "Individual reports shared" },
+            { num: 5, title: "Engage", desc: "Wellness sessions" },
+            { num: 6, title: "Review", desc: "Quarterly insights" },
+        ],
+        whyChoose: [
+            "Reduces workplace stress",
+            "Improves focus & performance",
+            "Lowers absenteeism & attrition",
+            "Boosts employer brand",
+            "Aligned with WHO guidelines",
+        ],
+        highlights: [
+            { icon: "🏢", title: "On-Site Camps", desc: "At your workplace" },
+            { icon: "🩺", title: "Health Checks", desc: "Full body screening" },
+            { icon: "🧘", title: "Wellness Programs", desc: "Engaging sessions" },
+            { icon: "📊", title: "Insights", desc: "Actionable reports" },
+        ],
+        industries: [
+            { icon: "🏢", label: "Corporates" },
+            { icon: "🏭", label: "Manufacturing" },
+            { icon: "💻", label: "IT & Tech" },
+            { icon: "🏦", label: "BFSI" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "On-site", label: "Delivery" },
+            { value: "Digital", label: "Reports" },
+        ],
+        comparison: [
+            { feature: "On-site Screening", credent: true, others: false },
+            { feature: "Customized Programs", credent: true, others: false },
+            { feature: "Wellness Sessions", credent: true, others: false },
+            { feature: "Digital Dashboards", credent: true, others: true },
+            { feature: "CSR Support", credent: true, others: false },
+        ],
+        cta: {
+            title: "Build a Healthier Workforce",
+            text: "Corporate wellness that actually works.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Confidential Reports" },
+            { icon: "🛡️", title: "Expert Doctors" },
+            { icon: "📄", title: "Digital Dashboards" },
+            { icon: "🎧", title: "HR Support" },
+        ],
     },
 
     "Onsite Radiology Services": {
         title: "Onsite Radiology Services",
-        content: `
-      <p>Credent offers the complete suite of onsite radiology services for every type of healthcare providers ranging from small to large hospitals and government organizations. Services cover ultrasound, X-rays and CT scan among others. Apart from providing equipments we also provide expert team along with a radiologist and doctor. Our onsite team blends in with your staff members and becomes a seamless part of your services, bringing in value and enhanced reputation. Adding onsite radiology can also help to save lives.</p>
-
-      <p>When you avail of our onsite radiology services you get all the benefits of such services without the headaches of maintaining equipments and hiring specialists. We provide experts along with equipments to ensure 24x7 services to your customers. We put in place an IT-enabled process backed by quality procedures to ensure standardized workflows and highest levels of patient care.</p>
-    `,
+        subtitle: "Expert Imaging. Delivered at Your Site.",
+        stats: [
+            { value: "200+", label: "Hospital Partners" },
+            { value: "24/7", label: "Availability" },
+            { value: "100%", label: "Certified Staff" },
+            { value: "3+", label: "Imaging Modalities" },
+        ],
+        journey: [
+            { num: 1, title: "Setup", desc: "Equipment deployment" },
+            { num: 2, title: "Team", desc: "Radiologist onboarding" },
+            { num: 3, title: "Scan", desc: "Patient imaging" },
+            { num: 4, title: "Review", desc: "Radiologist reporting" },
+            { num: 5, title: "Digital", desc: "Reports shared online" },
+            { num: 6, title: "Support", desc: "Continuous assistance" },
+        ],
+        whyChoose: [
+            "Ultrasound, X-ray & CT scan",
+            "24x7 expert availability",
+            "IT-enabled workflows",
+            "Zero headache of equipment upkeep",
+            "Enhanced patient care",
+        ],
+        highlights: [
+            { icon: "🩻", title: "Full Imaging Suite", desc: "Multi-modality services" },
+            { icon: "🧑‍⚕️", title: "Expert Radiologists", desc: "On-site specialists" },
+            { icon: "⚙️", title: "Equipment Provided", desc: "No capital cost" },
+            { icon: "📄", title: "Digital Reports", desc: "Fast turnaround" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🏛️", label: "Govt Facilities" },
+            { icon: "🔬", label: "Diagnostic Centers" },
+            { icon: "🚑", label: "Emergency Care" },
+        ],
+        coverage: [
+            { value: "200+", label: "Sites" },
+            { value: "24/7", label: "Coverage" },
+            { value: "Digital", label: "Reports" },
+        ],
+        comparison: [
+            { feature: "Onsite Equipment", credent: true, others: false },
+            { feature: "Expert Radiologists", credent: true, others: false },
+            { feature: "24x7 Availability", credent: true, others: false },
+            { feature: "Digital Reporting", credent: true, others: true },
+            { feature: "IT-enabled Workflow", credent: true, others: false },
+        ],
+        cta: {
+            title: "Add Radiology Without the Overhead",
+            text: "We bring imaging expertise to your site.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Certified Radiologists" },
+            { icon: "🛡️", title: "Quality-Assured" },
+            { icon: "📄", title: "Digital Reports" },
+            { icon: "🎧", title: "24/7 Support" },
+        ],
     },
 
     "Lab Technician": {
         title: "Lab Technician",
-        content: `
-      <p>Credent is your trusted source for highly trained and skilled lab technicians to take care of even the most demanding testing procedures. We recruit candidates with recognized qualifications and enhance their skills with further training in specialized processes and in use of latest and most advanced equipments used in clinical and pathological testing laboratories.</p>
-
-      <p>Recruit a lab technician through us and you get the assurance of highly trained and skilled person who will accomplish tasks in record time and be a genuine asset for your organization. You can just as well outsource lab technician services to us and we will take care of putting in place the right candidate, manage services and give you the best results at the lowest cost. You also have the choice of calling for temporary lab technicians to fill gaps in case of demand or when your regular staff goes on leave. With Credent here, your lab never stops working.</p>
-    `,
+        subtitle: "Skilled. Dependable. Always Testing.",
+        stats: [
+            { value: "2000+", label: "Trained Techs" },
+            { value: "120+", label: "Labs Served" },
+            { value: "48 hrs", label: "Fast Placement" },
+            { value: "100%", label: "Certified" },
+        ],
+        journey: [
+            { num: 1, title: "Request", desc: "Client need shared" },
+            { num: 2, title: "Match", desc: "Technician shortlisted" },
+            { num: 3, title: "Interview", desc: "Skill checks" },
+            { num: 4, title: "Verify", desc: "Background & qualifications" },
+            { num: 5, title: "Train", desc: "Equipment-specific training" },
+            { num: 6, title: "Deploy", desc: "Onboarded at lab" },
+        ],
+        whyChoose: [
+            "Recognized qualifications",
+            "Trained on advanced equipment",
+            "Full-time & temporary options",
+            "Backup staff on demand",
+            "Cost-effective outsourcing",
+        ],
+        highlights: [
+            { icon: "🔬", title: "Certified Techs", desc: "Qualified lab professionals" },
+            { icon: "🎓", title: "Advanced Training", desc: "Latest equipment know-how" },
+            { icon: "⚡", title: "Quick Deployment", desc: "Fast onboarding" },
+            { icon: "🔁", title: "Backup Staff", desc: "Always running" },
+        ],
+        industries: [
+            { icon: "🔬", label: "Diagnostic Labs" },
+            { icon: "🏥", label: "Hospitals" },
+            { icon: "🧪", label: "Research Labs" },
+            { icon: "💊", label: "Pharma" },
+        ],
+        coverage: [
+            { value: "120+", label: "Cities" },
+            { value: "48h", label: "Turnaround" },
+            { value: "100%", label: "Certified" },
+        ],
+        comparison: [
+            { feature: "Certified Technicians", credent: true, others: false },
+            { feature: "Equipment-specific Training", credent: true, others: false },
+            { feature: "Backup Staffing", credent: true, others: false },
+            { feature: "Contract Options", credent: true, others: true },
+            { feature: "Pan-India Network", credent: true, others: false },
+        ],
+        cta: {
+            title: "Keep Your Lab Running Non-Stop",
+            text: "Skilled lab technicians, exactly when you need them.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Verified Qualifications" },
+            { icon: "🛡️", title: "Quality Standards" },
+            { icon: "📄", title: "Clear Documentation" },
+            { icon: "🎧", title: "Client Support" },
+        ],
     },
 
     "Customer Care Setup": {
         title: "Customer Care Setup",
-        content: `
-      <p>Credent Group can help to create a customer care department in your organization. We make use of specialized IT infrastructure and multi-channel communication facility handled by trained customer care representatives. Customer experience matters a lot in these days of intense competition and the speed as well as the way in which you respond can make a difference to your customer. Our customer care setup helps you respond promptly to queries or complaints and resolve them to the caller’s satisfaction.</p>
-
-      <p>Our customer care setup also integrates data analytics and call recording. This helps you to identify gaps or deficiencies and take action to remedy such situations should your customer care personnel face a similar issue in future. You can also identify opportunities and create strategies to generate more business.</p>
-
-      <p>Credent will supply equipments, take care of installation and then commission it. We also take care of providing trained customer care support executives or train your existing personnel to take on this duty and enhance your reputation.</p>
-    `,
+        subtitle: "Turnkey Support. Trained Teams. Ready to Run.",
+        stats: [
+            { value: "50+", label: "Setups Delivered" },
+            { value: "24/7", label: "Coverage" },
+            { value: "Multi", label: "Channel" },
+            { value: "100%", label: "Recorded Calls" },
+        ],
+        journey: [
+            { num: 1, title: "Assess", desc: "Understand your needs" },
+            { num: 2, title: "Design", desc: "Plan infra & staffing" },
+            { num: 3, title: "Setup", desc: "Install systems" },
+            { num: 4, title: "Train", desc: "Agents onboarded" },
+            { num: 5, title: "Launch", desc: "Go live" },
+            { num: 6, title: "Optimize", desc: "Analytics & improvement" },
+        ],
+        whyChoose: [
+            "IT infrastructure included",
+            "Trained customer care agents",
+            "Multi-channel communication",
+            "Analytics & call recording",
+            "Training for your team available",
+        ],
+        highlights: [
+            { icon: "🎧", title: "Trained Agents", desc: "Professional support" },
+            { icon: "📞", title: "Multi-Channel", desc: "Phone, chat, email" },
+            { icon: "📊", title: "Analytics", desc: "Insights from every call" },
+            { icon: "⚙️", title: "Full Setup", desc: "Infra + software + staff" },
+        ],
+        industries: [
+            { icon: "🏥", label: "Healthcare" },
+            { icon: "🏢", label: "Corporates" },
+            { icon: "🛒", label: "E-commerce" },
+            { icon: "💰", label: "BFSI" },
+        ],
+        coverage: [
+            { value: "24/7", label: "Availability" },
+            { value: "Multi", label: "Channel" },
+            { value: "Cloud", label: "Enabled" },
+        ],
+        comparison: [
+            { feature: "Turnkey Setup", credent: true, others: false },
+            { feature: "Trained Agents", credent: true, others: false },
+            { feature: "Call Analytics", credent: true, others: false },
+            { feature: "Multi-channel Support", credent: true, others: true },
+            { feature: "Custom Training", credent: true, others: false },
+        ],
+        cta: {
+            title: "Upgrade Your Customer Experience",
+            text: "Launch a customer care team that delivers.",
+        },
+        bottomFeatures: [
+            { icon: "🆔", title: "Trained Agents" },
+            { icon: "🛡️", title: "Data Security" },
+            { icon: "📄", title: "Detailed Reports" },
+            { icon: "🎧", title: "Ongoing Support" },
+        ],
     },
 };
 
-export const serviceSections = [
-    "Rider App Tos",
-    "Field Executives (Bikers)",
-    "Phlebotomist Services",
-    "Man Power Outsourcing",
-    "Home Collection",
-    "Cold Chain Logistics",
-    "Corporate Health",
-    "Onsite Radiology Services",
-    "Lab Technician",
-    "Customer Care Setup",
-];
+export const serviceSections = Object.keys(servicesData);
 
 export default function Services({ onNavigate, initialSection }) {
     const [active, setActive] = useState(
-        initialSection && servicesData[initialSection] ? initialSection : "Rider App Tos"
+        initialSection && servicesData[initialSection] ? initialSection : "Phlebotomist Services"
     );
 
     useEffect(() => {
@@ -179,10 +617,11 @@ export default function Services({ onNavigate, initialSection }) {
         }
     }, [initialSection]);
 
+    const data = servicesData[active];
+
     return (
         <div className="services-page">
-
-            {/* ✅ HERO (NEW) */}
+            {/* HERO */}
             <div className="services-hero">
                 <div className="services-hero__inner">
                     <div className="services-breadcrumb">
@@ -190,18 +629,15 @@ export default function Services({ onNavigate, initialSection }) {
                         <span>›</span>
                         <span>Services</span>
                     </div>
-
                     <h1>Services</h1>
                 </div>
             </div>
 
             {/* CONTENT */}
             <div className="services-container">
-
                 {/* LEFT */}
                 <div className="services-sidebar">
                     <div className="services-title">SERVICES</div>
-
                     {Object.keys(servicesData).map((item) => (
                         <div
                             key={item}
@@ -215,17 +651,148 @@ export default function Services({ onNavigate, initialSection }) {
 
                 {/* RIGHT */}
                 <div className="services-content">
-                    <h2>{servicesData[active].title}</h2>
-                    <div className="services-line" />
+                    {/* HEADER CARD */}
+                    <div className="svc-header">
+                        <div className="svc-header__icon">🩺</div>
+                        <div>
+                            <h2>{data.title}</h2>
+                            <p className="svc-subtitle">{data.subtitle}</p>
+                        </div>
+                    </div>
 
-                    <div
-                        className="services-text"
-                        dangerouslySetInnerHTML={{ __html: servicesData[active].content }}
-                    />
+                    {/* STATS */}
+                    <div className="svc-stats">
+                        {data.stats.map((s, i) => (
+                            <div key={i} className="svc-stat">
+                                <div className="svc-stat__value">{s.value}</div>
+                                <div className="svc-stat__label">{s.label}</div>
+                            </div>
+                        ))}
+                    </div>
 
-                    <button className="services-btn">GET IN TOUCH</button>
+                    {/* JOURNEY */}
+                    <div className="svc-section">
+                        <h3 className="svc-section__title">{data.title.split(" ")[0]} Journey</h3>
+                        <div className="svc-journey">
+                            {data.journey.map((j, i) => (
+                                <div key={i} className="svc-journey__step">
+                                    <div className="svc-journey__num">{j.num}</div>
+                                    <div className="svc-journey__title">{j.title}</div>
+                                    <div className="svc-journey__desc">{j.desc}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* HIGHLIGHTS 3-COLUMN */}
+                    <div className="svc-section">
+                        <h3 className="svc-section__title">Service Key Highlights</h3>
+                        <div className="svc-highlights">
+                            {/* Why Choose */}
+                            <div className="svc-card">
+                                <h4>Why Choose Credent</h4>
+                                <ul className="svc-checklist">
+                                    {data.whyChoose.map((w, i) => (
+                                        <li key={i}><span className="svc-check">✓</span>{w}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Our Highlights */}
+                            <div className="svc-card">
+                                <h4>Our Service Highlights</h4>
+                                <div className="svc-hl-grid">
+                                    {data.highlights.map((h, i) => (
+                                        <div key={i} className="svc-hl-item">
+                                            <div className="svc-hl-icon">{h.icon}</div>
+                                            <div className="svc-hl-title">{h.title}</div>
+                                            <div className="svc-hl-desc">{h.desc}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Industries */}
+                            <div className="svc-card">
+                                <h4>Industries We Serve</h4>
+                                <ul className="svc-industries">
+                                    {data.industries.map((ind, i) => (
+                                        <li key={i}>
+                                            <span className="svc-ind-icon">{ind.icon}</span>
+                                            {ind.label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* COVERAGE + COMPARISON */}
+                    <div className="svc-row-2col">
+                        <div className="svc-card svc-coverage">
+                            <h4>Pan-India Coverage</h4>
+                            <div className="svc-map">
+                                <LogisticsMap />
+                            </div>
+                            <div className="svc-coverage-stats">
+                                {data.coverage.map((c, i) => (
+                                    <div key={i} className="svc-coverage-item">
+                                        <div className="svc-cov-value">{c.value}</div>
+                                        <div className="svc-cov-label">{c.label}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="svc-card">
+                            <h4>Why Credent Stands Out</h4>
+                            <table className="svc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Credent</th>
+                                        <th>Others</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {data.comparison.map((c, i) => (
+                                        <tr key={i}>
+                                            <td>{c.feature}</td>
+                                            <td className={c.credent ? "yes" : "no"}>
+                                                {c.credent ? "✓" : "✗"}
+                                            </td>
+                                            <td className={c.others ? "yes" : "no"}>
+                                                {c.others ? "✓" : "✗"}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="svc-cta">
+                        <div>
+                            <h4>{data.cta.title}</h4>
+                            <p>{data.cta.text}</p>
+                        </div>
+                        <div className="svc-cta__btns">
+                            <button className="svc-btn svc-btn--primary">Schedule Pickup</button>
+                            <button className="svc-btn svc-btn--ghost">Contact Sales</button>
+                        </div>
+                    </div>
+
+                    {/* BOTTOM FEATURES */}
+                    <div className="svc-bottom">
+                        {data.bottomFeatures.map((f, i) => (
+                            <div key={i} className="svc-bottom__item">
+                                <div className="svc-bottom__icon">{f.icon}</div>
+                                <div className="svc-bottom__title">{f.title}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-
             </div>
         </div>
     );
