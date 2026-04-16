@@ -19,7 +19,9 @@ import MissionVision from './components/MissionVision'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import OurTeam from './components/OurTeam'
 import Services from './components/Services'
+import ProductsPage from './components/ProductsPage'
 import Training from './components/Training'
+import BusinessPartners from './components/BusinessPartners'
 import WorkingWithCredent from './components/WorkingWithCredent'
 import CurrentOpening from './components/CurrentOpening'
 import JobApplication from './components/JobApplication'
@@ -50,11 +52,11 @@ export default function App() {
           <Coverage />
           <Infrastructure />
           <Products />
-          <StatsBar />
-          <ClientCarousel />
+          {/* <StatsBar /> */}
+          {/* <ClientCarousel /> */}
+          <BusinessPartners />
           <TrustedBy />
           <Contact />
-          <Footer onNavigate={navigate} />
         </>
       )}
 
@@ -93,6 +95,13 @@ export default function App() {
       {page === 'job-application' && (
         <JobApplication onNavigate={navigate} />
       )}
+
+      {page === 'products-page' && (
+        <ProductsPage onNavigate={navigate} />
+      )}
+
+      <Footer onNavigate={navigate} />
+
       {/* {page === 'our-team' && (
         <div style={{
           minHeight: '100vh',

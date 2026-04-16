@@ -9,7 +9,7 @@
 }
 
 .section-label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -80,8 +80,13 @@
 }
 
 @media (max-width: 900px) {
-  .journey__grid { grid-template-columns: repeat(2, 1fr); }
+  .journey__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media (max-width: 600px) {
-  .journey__grid { grid-template-columns: 1fr; }
+  .journey__grid {
+    grid-template-columns: 1fr;
+  }
 }

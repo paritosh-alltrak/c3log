@@ -1,86 +1,145 @@
 import './CompanyProfile.css'
 
+const services = [
+  'Home Collection Services',
+  'Phlebotomist Services',
+  'Healthcare Logistics',
+  'Learning & Development',
+  'Digital HR (C3HRMS)',
+  'Corporate Wellness',
+]
+
 export default function CompanyProfile({ onNavigate }) {
   return (
     <div className="cp-page">
-      <div className="cp-hero">
-        <div className="cp-hero__inner">
-          <nav className="cp-breadcrumb">
-            <span className="cp-breadcrumb__link" onClick={() => onNavigate('home')}>Home</span>
-            <span className="cp-breadcrumb__sep">›</span>
-            <span>About Us</span>
-            <span className="cp-breadcrumb__sep">›</span>
-            <span>Company Profile</span>
-          </nav>
-          <h1>Company Profile</h1>
-        </div>
-      </div>
+      {/* ── Intro section ──────────────────────────── */}
+      <section className="cp-intro">
+        <div className="cp-intro__inner">
 
-      <div className="cp-content">
-        <h2 className="cp-title">Credent Group Of Companies</h2>
+          {/* LEFT — identity card */}
+          <div className="cp-card">
+            <div className="cp-card__logo-wrap">
+              <img src="/image.png" alt="Credent C3" className="cp-card__logo" />
+            </div>
 
-        <p>
-          C3 logistics has step up as the pioneer to transform the healthcare industry with their
-          innovated mindset approach with logistic Services, Phlebotomist Service, Home collection
-          Services and many more. At Credent, we have the answer to all diagnostic needs.
-        </p>
+            <p className="cp-card__name">CREDENT</p>
+            <p className="cp-card__sub">CONNECT N CARE</p>
+            <p className="cp-card__tagline">HEALTHCARE · LOGISTICS · TECHNOLOGY</p>
 
-        <p>
-          With an indomitable aspiration to achieve every possible thing in a wide spectrum of
-          industries, Credent Group has witnessed its inception in the year <strong>2012</strong> by{' '}
-          <strong>Karan Sharma</strong> Who is a Founder and CEO of <strong>Credent Group</strong>{' '}
-          along with <strong>6 more employees</strong>. With our Head office in Delhi and{' '}
-          <strong>10 branch offices in PAN India</strong>. Credent has been established its dignified
-          presence in more than <strong>452 cities</strong> and over{' '}
-          <strong>4500+ no's of personnel</strong> currently working under Credent payroll. We are
-          advancing with the passage of time crossing newer milestones.
-        </p>
+            <div className="cp-card__stats">
+              <div className="cp-card__stat">
+                <span className="cp-card__stat-val">2012</span>
+                <span className="cp-card__stat-lbl">Founded</span>
+              </div>
+              <div className="cp-card__stat">
+                <span className="cp-card__stat-val">451+</span>
+                <span className="cp-card__stat-lbl">Cities</span>
+              </div>
+              <div className="cp-card__stat">
+                <span className="cp-card__stat-val">4500+</span>
+                <span className="cp-card__stat-lbl">Clients</span>
+              </div>
+            </div>
 
-        <p>
-          Today, the Credent Group consists of the following companies catering to the diverse needs
-          of our clients
-        </p>
-
-        <ul className="cp-companies">
-          <li>CREDENT MANAGEMENTS &amp; CONSULTANTS PVT. LTD.</li>
-          <li>CREDENT CONNECT N CARE LTD.</li>
-          <li>CREDENT TEAM PVT. LTD.</li>
-        </ul>
-
-        <p>
-          Our Network is our Core Strength. Credent has been empowered by 35+ Air connectivity,
-          05+ OTC route connectivity, 6+ Vans, approx. 2500 field executives with bike's and approx.
-          2000 Phlebotomists(Home Collection Phlebotomist and Lab Technician). Credent is ready to
-          reach every part in PAN India as per the demand of our clients.
-        </p>
-
-        <p>
-          We envisage a flourishing future and equip us accordingly with new ideas and new verticals
-          to withstand the challenges of time. In the years ahead we have plans to setup Inbound &amp;
-          outbound call centre, customer care department, front office support and onsite radiology
-          services. We are confident of set new benchmarks in these verticals the way we have
-          established remarkable presence in all the verticals we are operating currently.
-        </p>
-
-        <div className="cp-stats">
-          <div className="cp-stat">
-            <span className="cp-stat__number">452+</span>
-            <span className="cp-stat__label">Cities</span>
+            {/* floating badge */}
+            <div className="cp-card__badge">
+              <span className="cp-card__badge-val">14+</span>
+              <span className="cp-card__badge-lbl">Years of Trust</span>
+            </div>
           </div>
-          <div className="cp-stat">
-            <span className="cp-stat__number">4500+</span>
-            <span className="cp-stat__label">Personnel</span>
-          </div>
-          <div className="cp-stat">
-            <span className="cp-stat__number">10</span>
-            <span className="cp-stat__label">Branch Offices</span>
-          </div>
-          <div className="cp-stat">
-            <span className="cp-stat__number">2012</span>
-            <span className="cp-stat__label">Founded</span>
+
+          {/* RIGHT — text */}
+          <div className="cp-intro__text">
+            <span className="cp-intro__pill">Company Introduction</span>
+
+            <h1 className="cp-intro__title">
+              A Trusted Name in Healthcare,<br />
+              Logistics &amp; Technology
+            </h1>
+
+            <p className="cp-intro__body">
+              Credent Connect N Care is headquartered in Delhi and operates one of India's
+              largest healthcare workforce and logistics networks — built over 14 years of
+              relentless execution across 450+ cities.
+            </p>
+
+            <p className="cp-intro__body">
+              We deploy trained field executives, phlebotomists, paramedics, and lab
+              technicians while powering their operations with proprietary platforms:
+              C3HRMS, C3POST, and ConnectNGrow.
+            </p>
+
+            <div className="cp-services">
+              {services.map((s) => (
+                <div key={s} className="cp-service-tag">
+                  <span className="cp-service-dot" />
+                  {s}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── About detail section ───────────────────── */}
+      <section className="cp-detail">
+        <div className="cp-detail__inner">
+
+          <div className="cp-detail__block">
+            <span className="cp-intro__pill">Our Story</span>
+            <h2 className="cp-detail__title">Credent Group Of Companies</h2>
+            <p>
+              C3 Logistics has stepped up as the pioneer to transform the healthcare industry
+              with an innovated mindset — offering Logistics Services, Phlebotomist Service,
+              Home Collection Services and many more. At Credent, we have the answer to all
+              diagnostic needs.
+            </p>
+            <p>
+              With an indomitable aspiration to achieve every possible thing in a wide spectrum
+              of industries, Credent Group was founded in <strong>2012</strong> by{' '}
+              <strong>Karan Sharma</strong>, CEO of <strong>Credent Group</strong>, along with
+              6 more employees. With our Head Office in Delhi and{' '}
+              <strong>10 branch offices pan-India</strong>, Credent has established its presence
+              in more than <strong>452 cities</strong> with over{' '}
+              <strong>4,500+ personnel</strong> on the Credent payroll.
+            </p>
+            <p>
+              Today the Credent Group comprises three companies catering to diverse client needs:
+            </p>
+            <ul className="cp-companies">
+              <li>Credent Managements &amp; Consultants Pvt. Ltd.</li>
+              <li>Credent Connect N Care Ltd.</li>
+              <li>Credent Team Pvt. Ltd.</li>
+            </ul>
+            <p>
+              Our network is our core strength — 35+ air connectivity routes, 5+ OTC routes,
+              6+ vans, ~2,500 field executives with bikes, and ~2,000 phlebotomists covering
+              every part of Pan-India as per client demand.
+            </p>
+          </div>
+
+          {/* Stats grid */}
+          {/* <div className="cp-stats">
+            <div className="cp-stat">
+              <span className="cp-stat__number">452+</span>
+              <span className="cp-stat__label">Cities</span>
+            </div>
+            <div className="cp-stat">
+              <span className="cp-stat__number">4,500+</span>
+              <span className="cp-stat__label">Personnel</span>
+            </div>
+            <div className="cp-stat">
+              <span className="cp-stat__number">10</span>
+              <span className="cp-stat__label">Branch Offices</span>
+            </div>
+            <div className="cp-stat">
+              <span className="cp-stat__number">2012</span>
+              <span className="cp-stat__label">Founded</span>
+            </div>
+          </div> */}
+
+        </div>
+      </section>
     </div>
   )
 }

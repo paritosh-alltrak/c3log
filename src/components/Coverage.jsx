@@ -10,7 +10,7 @@ export default function Coverage() {
         <div className="coverage__text">
           <p className="section-label">Pan-India network</p>
           <h2 className="coverage__title">
-            Air. Road. Waterway.<br />
+            Air. Road.<br />
             <span>100 cities.</span><br />
             <em>Nothing stops.</em>
           </h2>
@@ -22,9 +22,8 @@ export default function Coverage() {
 
           <div className="coverage__modes">
             {[
-              { color: '#4f8ef7', label: 'Air',      icon: '✈' },
-              { color: '#f59e0b', label: 'Road',     icon: '🛵' },
-              { color: '#2de0a5', label: 'Waterway', icon: '🚢' },
+              { color: '#4f8ef7', label: 'Air', icon: '✈' },
+              { color: '#f59e0b', label: 'Road', icon: '🛵' },
             ].map((m) => (
               <div key={m.label} className="coverage__mode">
                 <span style={{ color: m.color, fontSize: '1rem' }}>{m.icon}</span>
@@ -36,8 +35,8 @@ export default function Coverage() {
           <div className="coverage__highlights">
             {[
               { num: '632+', text: 'Cities covered' },
-              { num: '100',  text: 'Priority hubs'  },
-              { num: '24/7', text: 'Operations'     },
+              { num: '100', text: 'Priority hubs' },
+              { num: '24/7', text: 'Operations' },
             ].map((h) => (
               <div key={h.num} className="coverage__hl">
                 <span className="coverage__hl-num">{h.num}</span>

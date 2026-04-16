@@ -31,21 +31,21 @@ export default function Contact() {
               <span className="contact__info-icon">📍</span>
               <div>
                 <p className="contact__info-label">Headquarters</p>
-                <p className="contact__info-val">Bengaluru, Karnataka, India</p>
+                <p className="contact__info-val">Delhi, India</p>
               </div>
             </div>
             <div className="contact__info-item">
               <span className="contact__info-icon">📧</span>
               <div>
                 <p className="contact__info-label">Email</p>
-                <p className="contact__info-val">hello@c3log.in</p>
+                <p className="contact__info-val"> info@c3logistics.co.in</p>
               </div>
             </div>
             <div className="contact__info-item">
               <span className="contact__info-icon">📞</span>
               <div>
                 <p className="contact__info-label">Phone</p>
-                <p className="contact__info-val">+91 80 4567 8900</p>
+                <p className="contact__info-val">+91 9971777199</p>
               </div>
             </div>
           </div>

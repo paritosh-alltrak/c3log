@@ -19,7 +19,7 @@ const points = [
   {
     icon: '🚚',
     title: 'Last-Mile Delivery',
-    desc: 'Air, road, and waterway routes ensuring nothing stops the sample journey.',
+    desc: 'Air and road routes ensuring nothing stops the sample journey.',
   },
   {
     icon: '🔬',

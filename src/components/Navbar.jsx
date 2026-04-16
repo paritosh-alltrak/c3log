@@ -48,8 +48,7 @@ export default function Navbar({ onNavigate, currentPage }) {
           onClick={() => handleNav('home')}
           style={{ cursor: 'pointer' }}
         >
-          <span className="logo-c3">C3</span>
-          <span className="logo-log">Logistics</span>
+          <img src="/image.png" alt="C3 Logistics" className="navbar__logo-img" />
         </span>
 
         {/* CENTER: NAV LINKS */}
@@ -70,6 +69,7 @@ export default function Navbar({ onNavigate, currentPage }) {
             </span>
 
             <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
               {serviceSections.map((label) => (
                 <li key={label}>
                   <span
@@ -80,6 +80,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                   </span>
                 </li>
               ))}
+              </div>
             </ul>
           </li>
 
@@ -93,6 +94,7 @@ export default function Navbar({ onNavigate, currentPage }) {
             </span>
 
             <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
               {aboutItems.map((item) => (
                 <li key={item.page}>
                   <span
@@ -103,6 +105,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                   </span>
                 </li>
               ))}
+              </div>
             </ul>
           </li>
 
@@ -118,6 +121,7 @@ export default function Navbar({ onNavigate, currentPage }) {
               Career <span className="navbar__chevron">▾</span>
             </span>
             <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
               {careerItems.map((item) => (
                 <li key={item.page}>
                   <span
@@ -128,7 +132,17 @@ export default function Navbar({ onNavigate, currentPage }) {
                   </span>
                 </li>
               ))}
+              </div>
             </ul>
+          </li>
+
+          <li>
+            <span
+              className={`navbar__link ${currentPage === 'products-page' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('products-page')}
+            >
+              Products
+            </span>
           </li>
 
           <li>
@@ -143,14 +157,22 @@ export default function Navbar({ onNavigate, currentPage }) {
           <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#contact'); }}>Contact</a></li>
         </ul>
 
-        {/* RIGHT (mobile menu toggle) */}
-        <button
-          className="navbar__hamburger"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          <span /><span /><span />
-        </button>
+        {/* RIGHT: CTA + mobile menu toggle */}
+        <div className="navbar__right">
+          <button
+            className="navbar__cta"
+            onClick={() => handleHomeLink('#contact')}
+          >
+            Get In Touch →
+          </button>
+          <button
+            className="navbar__hamburger"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
 
       </div>
     </nav>

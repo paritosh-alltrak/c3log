@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import './JourneyTracker.css'
 
 const stops = [
-  { label: 'HOME',    position: 0   },
-  { label: 'PICKUP',  position: 25  },
-  { label: 'TRANSIT', position: 50  },
-  { label: 'COLD HUB',position: 75  },
-  { label: 'LAB',     position: 100 },
+  { label: 'HOME', position: 0 },
+  { label: 'PICKUP', position: 25 },
+  { label: 'TRANSIT', position: 50 },
+  { label: 'COLD HUB', position: 75 },
+  { label: 'LAB', position: 100 },
 ]
 
 const ScooterSVG = () => (
-  <img src="/rider.png" alt="scooter" width="140" height="94" style={{ display: 'block' }} />
+  <img src="/rider.png" alt="scooter" width="60" height="40" style={{ display: 'block' }} />
 )
 
 export default function JourneyTracker() {
@@ -29,7 +29,7 @@ export default function JourneyTracker() {
 
   // Map 0→1 progress to pixel left position across the full viewport width
   // Scooter SVG is 80px wide; start just off-screen left, end just off-screen right
-  const scooterLeft = `calc(${progress * 100}% - ${progress * 140}px)`
+  const scooterLeft = `calc(${progress * 100}% - ${progress * 90}px)`
 
   return (
     <div className="jt">
