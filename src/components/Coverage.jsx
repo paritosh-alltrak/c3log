@@ -10,7 +10,7 @@ export default function Coverage() {
         <div className="coverage__text">
           <p className="section-label">Pan-India network</p>
           <h2 className="coverage__title">
-            Air. Road.<br />
+            Air. Road. Train.<br />
             <span>100+ cities.</span><br />
             <em>Nothing stops.</em>
           </h2>
@@ -24,7 +24,7 @@ export default function Coverage() {
             {[
               { color: '#4f8ef7', label: 'Air', icon: '✈' },
               { color: '#f59e0b', label: 'Road', icon: '🛵' },
-              { color: '#f59e0b', label: 'Train', icon: '🛵' },
+              { color: '#f59e0b', label: 'Train', icon: '🚂' },
             ].map((m) => (
               <div key={m.label} className="coverage__mode">
                 <span style={{ color: m.color, fontSize: '1rem' }}>{m.icon}</span>

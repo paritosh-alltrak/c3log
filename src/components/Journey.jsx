@@ -7,14 +7,14 @@ const points = [
     desc: 'Trained phlebotomists dispatched to patient locations across 632+ cities.',
   },
   {
-    icon: '❄️',
-    title: 'Cold Chain Transport',
-    desc: 'Samples moved at 2–8°C with unbroken temperature monitoring end-to-end.',
-  },
-  {
     icon: '📦',
     title: 'Secure Packaging',
     desc: 'Bio-safe, tamper-evident packaging engineered for diagnostic integrity.',
+  },
+  {
+    icon: '❄️',
+    title: 'Cold Chain Transport',
+    desc: 'Samples moved at 2–8°C with unbroken temperature monitoring end-to-end.',
   },
   {
     icon: '🚚',

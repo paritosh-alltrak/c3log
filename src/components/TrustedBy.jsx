@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './TrustedBy.css'
 
 const testimonials = [
@@ -29,14 +29,27 @@ const testimonials = [
 
 export default function TrustedBy() {
   const [active, setActive] = useState(0)
+  const paused = useRef(false)
 
   const prev = () => setActive((a) => (a - 1 + testimonials.length) % testimonials.length)
   const next = () => setActive((a) => (a + 1) % testimonials.length)
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!paused.current) setActive((a) => (a + 1) % testimonials.length)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [])
+
   const item = testimonials[active]
 
   return (
-    <section className="trusted" id="trusted">
+    <section
+      className="trusted"
+      id="trusted"
+      onMouseEnter={() => { paused.current = true }}
+      onMouseLeave={() => { paused.current = false }}
+    >
       <div className="trusted__inner">
         <div className="trusted__header">
           <p className="section-label">Partners &amp; clients</p>

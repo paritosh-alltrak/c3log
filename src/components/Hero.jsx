@@ -18,9 +18,8 @@ export default function Hero() {
           <div className="hero__badge">Pre-analytical logistics, reimagined</div>
 
           <h1 className="hero__headline">
-            Your sample <br />
-            <em>our trusted</em><br />
-            network.
+            Your sample <em>our </em><br />
+            <em>trusted</em> network.
           </h1>
 
           <p className="hero__sub">

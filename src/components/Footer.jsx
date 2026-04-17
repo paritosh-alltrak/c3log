@@ -85,7 +85,8 @@ export default function Footer({ onNavigate }) {
             <li><a href="tel:+919821498692">9971777199</a></li>
             {/* <li><a href="tel:+918448164007">8448 164 007</a></li>
             <li><a href="tel:+919289739690">9289 739 690</a></li> */}
-            <li>Delhi HQ</li>
+            <li>B-3, Second Floor, Nimri Comm Complex,
+              Ashok Vihar Ph-IV, Delhi-110052</li>
           </ul>
         </div>
 

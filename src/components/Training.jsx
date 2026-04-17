@@ -1,8 +1,8 @@
 import './Training.css'
 
 /* Replace these with real image paths in /public once available. */
-const IMG_HIRING    = '/training-hiring.jpg'
-const IMG_ONSITE    = '/training-onsite.jpg'
+const IMG_HIRING = '/training-hiring.jpg'
+const IMG_ONSITE = '/training-onsite.jpg'
 const IMG_QUARTERLY = '/training-quarterly.jpg'
 
 function Section({ image, alt, reverse, title, intro, points, placeholder }) {

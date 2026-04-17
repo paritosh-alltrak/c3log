@@ -3,15 +3,12 @@ import './PrivacyPolicy.css'
 export default function PrivacyPolicy({ onNavigate }) {
   return (
     <div className="pp-page">
-      <div className="pp-hero">
-        <div className="pp-hero__inner">
-          <nav className="pp-breadcrumb">
-            <span className="pp-breadcrumb__link" onClick={() => onNavigate('home')}>Home</span>
-            <span className="pp-breadcrumb__sep">›</span>
-            <span>Privacy Policy</span>
-          </nav>
-          <h1>Privacy Policy</h1>
-        </div>
+
+      <div className="pp-intro">
+
+        <h1 className="pp-intro__title">Privacy <span>Policy</span></h1>
+        <p className="pp-intro__sub">Your data, handled with care and transparency.</p>
+
       </div>
 
       <div className="pp-content">
@@ -68,14 +65,8 @@ export default function PrivacyPolicy({ onNavigate }) {
             <li>Provide, operate, and maintain our website and services.</li>
             <li>Improve our website and services based on your feedback and usage patterns.</li>
             <li>Respond to your queries, requests, or customer support needs.</li>
-            <li>
-              Send you updates, newsletters, or promotional materials if you have opted to receive
-              them.
-            </li>
-            <li>
-              Ensure legal compliance, including complying with applicable data protection laws such
-              as the Information Technology Act, 2000, and rules thereunder.
-            </li>
+            <li>Send you updates, newsletters, or promotional materials if you have opted to receive them.</li>
+            <li>Ensure legal compliance, including complying with applicable data protection laws such as the Information Technology Act, 2000, and rules thereunder.</li>
           </ul>
           <p>
             You agree that we may use your Personal Information to facilitate the Services you
@@ -86,15 +77,8 @@ export default function PrivacyPolicy({ onNavigate }) {
             the Terms of Use or this Privacy Policy, or under the following circumstances:
           </p>
           <ul className="pp-list">
-            <li>
-              To respond to summons, court orders, or legal process, or to establish or exercise
-              our legal rights or defend against legal claims.
-            </li>
-            <li>
-              To transfer/disclose Personal Information about you to trusted partners, may or may
-              not be for gain, to promote certain products/services for commercial purposes, without
-              any prior notice to you.
-            </li>
+            <li>To respond to summons, court orders, or legal process, or to establish or exercise our legal rights or defend against legal claims.</li>
+            <li>To transfer/disclose Personal Information about you to trusted partners, may or may not be for gain, to promote certain products/services for commercial purposes, without any prior notice to you.</li>
           </ul>
         </section>
 
@@ -111,25 +95,12 @@ export default function PrivacyPolicy({ onNavigate }) {
 
         <section className="pp-section">
           <h2 className="pp-section__title">Your Rights</h2>
-          <p>
-            As per Indian law, you have the following rights regarding your personal data:
-          </p>
+          <p>As per Indian law, you have the following rights regarding your personal data:</p>
           <ul className="pp-list">
-            <li>
-              <strong>Access:</strong> Request access to the personal information we hold about you.
-            </li>
-            <li>
-              <strong>Correction:</strong> Request corrections to any inaccuracies in your personal
-              information.
-            </li>
-            <li>
-              <strong>Withdrawal of Consent:</strong> Withdraw your consent for processing your
-              personal data at any time.
-            </li>
-            <li>
-              <strong>Erasure:</strong> Request deletion of your personal information, subject to
-              legal obligations or retention requirements.
-            </li>
+            <li><strong>Access:</strong> Request access to the personal information we hold about you.</li>
+            <li><strong>Correction:</strong> Request corrections to any inaccuracies in your personal information.</li>
+            <li><strong>Withdrawal of Consent:</strong> Withdraw your consent for processing your personal data at any time.</li>
+            <li><strong>Erasure:</strong> Request deletion of your personal information, subject to legal obligations or retention requirements.</li>
           </ul>
           <p>
             We will retain your personal information for as long as necessary to fulfill the purposes

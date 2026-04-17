@@ -2,7 +2,7 @@
 
 .products {
   background: var(--bg-alt);
-  padding: 100px 24px 120px;
+  padding: 100px 24px 12px;
 }
 
 .products__inner {
@@ -13,7 +13,7 @@
 .products__header {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 72px;
+  margin: 0 auto 0px;
 }
 
 .products__title {
@@ -26,6 +26,7 @@
 .products__title em {
   font-style: italic;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .products__desc {
@@ -56,17 +57,65 @@
 /* ─────────────────────────────────────────
    Stars
 ───────────────────────────────────────── */
-.pstar { opacity: 0.18; }
+.pstar {
+  opacity: 0.18;
+}
 
-.pstar--0 { animation: tw0 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
-.pstar--1 { animation: tw1 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
-.pstar--2 { animation: tw2 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
-.pstar--3 { animation: tw3 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate; }
+.pstar--0 {
+  animation: tw0 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate;
+}
 
-@keyframes tw0 { from { opacity: 0.1;  } to { opacity: 0.6;  } }
-@keyframes tw1 { from { opacity: 0.16; } to { opacity: 0.48; } }
-@keyframes tw2 { from { opacity: 0.06; } to { opacity: 0.5;  } }
-@keyframes tw3 { from { opacity: 0.2;  } to { opacity: 0.7;  } }
+.pstar--1 {
+  animation: tw1 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate;
+}
+
+.pstar--2 {
+  animation: tw2 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate;
+}
+
+.pstar--3 {
+  animation: tw3 var(--dur, 3s) ease-in-out var(--del, 0s) infinite alternate;
+}
+
+@keyframes tw0 {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes tw1 {
+  from {
+    opacity: 0.16;
+  }
+
+  to {
+    opacity: 0.48;
+  }
+}
+
+@keyframes tw2 {
+  from {
+    opacity: 0.06;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes tw3 {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
 
 /* ─────────────────────────────────────────
    Nebula / core
@@ -78,8 +127,15 @@
 }
 
 @keyframes nebulaPulse {
-  from { transform: scale(1);    opacity: 0.72; }
-  to   { transform: scale(1.08); opacity: 1;    }
+  from {
+    transform: scale(1);
+    opacity: 0.72;
+  }
+
+  to {
+    transform: scale(1.08);
+    opacity: 1;
+  }
 }
 
 .gx-core-glow {
@@ -87,8 +143,15 @@
 }
 
 @keyframes corePulse {
-  from { opacity: 0.5;  transform: scale(1);    }
-  to   { opacity: 0.88; transform: scale(1.12); }
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.88;
+    transform: scale(1.12);
+  }
 }
 
 .gx-core-shine {
@@ -96,21 +159,45 @@
 }
 
 @keyframes shinePulse {
-  from { opacity: 0.65; transform: scale(0.88); }
-  to   { opacity: 1;    transform: scale(1.12); }
+  from {
+    opacity: 0.65;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
 }
 
 /* ─────────────────────────────────────────
    Orbital rings — rotate at different speeds
 ───────────────────────────────────────── */
-.gx-ring { }
+.gx-ring {}
 
-.gx-ring--1 { animation: ringCW  25s linear infinite; }
-.gx-ring--2 { animation: ringCCW 44s linear infinite; }
-.gx-ring--3 { animation: ringCW  75s linear infinite; }
+.gx-ring--1 {
+  animation: ringCW 25s linear infinite;
+}
 
-@keyframes ringCW  { to { transform: rotate(360deg);  } }
-@keyframes ringCCW { to { transform: rotate(-360deg); } }
+.gx-ring--2 {
+  animation: ringCCW 44s linear infinite;
+}
+
+.gx-ring--3 {
+  animation: ringCW 75s linear infinite;
+}
+
+@keyframes ringCW {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringCCW {
+  to {
+    transform: rotate(-360deg);
+  }
+}
 
 /* ─────────────────────────────────────────
    Node halos
@@ -120,8 +207,15 @@
 }
 
 @keyframes haloPulse {
-  from { transform: scale(0.82); opacity: 0.18; }
-  to   { transform: scale(1.18); opacity: 0.45; }
+  from {
+    transform: scale(0.82);
+    opacity: 0.18;
+  }
+
+  to {
+    transform: scale(1.18);
+    opacity: 0.45;
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -135,12 +229,10 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(124, 58, 237, 0.55) 0%,
-    rgba(79, 142, 247, 0.22) 55%,
-    transparent 100%
-  );
+  background: radial-gradient(circle,
+      rgba(124, 58, 237, 0.55) 0%,
+      rgba(79, 142, 247, 0.22) 55%,
+      transparent 100%);
   border: 1px solid rgba(167, 139, 250, 0.55);
   display: flex;
   align-items: center;
@@ -156,6 +248,7 @@
       0 0 60px rgba(79, 142, 247, 0.14),
       inset 0 0 22px rgba(124, 58, 237, 0.22);
   }
+
   to {
     box-shadow:
       0 0 48px rgba(124, 58, 237, 0.75),
@@ -186,7 +279,9 @@
 }
 
 @keyframes centerRingSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .products__center-logo {
@@ -202,8 +297,13 @@
 }
 
 @keyframes logoFloat {
-  from { transform: translateY(-2px) scale(1);     }
-  to   { transform: translateY(2px)  scale(1.035); }
+  from {
+    transform: translateY(-2px) scale(1);
+  }
+
+  to {
+    transform: translateY(2px) scale(1.035);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -214,18 +314,30 @@
   transform: translate(-50%, -50%);
   z-index: 5;
   animation: nodeEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
-             nodeFloat 3.4s ease-in-out infinite alternate 0.7s;
+    nodeFloat 3.4s ease-in-out infinite alternate 0.7s;
   will-change: transform, opacity;
 }
 
 @keyframes nodeEnter {
-  from { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
-  to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+  from {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes nodeFloat {
-  from { transform: translate(-50%, -50%) translateY(-4px); }
-  to   { transform: translate(-50%, -50%) translateY(4px);  }
+  from {
+    transform: translate(-50%, -50%) translateY(-4px);
+  }
+
+  to {
+    transform: translate(-50%, -50%) translateY(4px);
+  }
 }
 
 .products__node-card:hover {
@@ -255,14 +367,14 @@
   box-shadow: 0 0 14px rgba(79, 142, 247, 0.18);
   /* accent glow */
   box-shadow: 0 0 14px color-mix(in srgb, var(--accent, #4f8ef7) 25%, transparent),
-              inset 0 0 10px color-mix(in srgb, var(--accent, #4f8ef7) 6%, transparent);
+    inset 0 0 10px color-mix(in srgb, var(--accent, #4f8ef7) 6%, transparent);
 }
 
 .products__node-card:hover {
   background: #ffffff;
   border-color: color-mix(in srgb, var(--accent, #4f8ef7) 70%, transparent);
   box-shadow: 0 0 28px color-mix(in srgb, var(--accent, #4f8ef7) 50%, transparent),
-              inset 0 0 14px color-mix(in srgb, var(--accent, #4f8ef7) 12%, transparent);
+    inset 0 0 14px color-mix(in srgb, var(--accent, #4f8ef7) 12%, transparent);
 }
 
 .products__node-icon {
@@ -298,10 +410,29 @@
     width: 76px;
     padding: 8px 6px;
   }
-  .products__node-icon  { font-size: 1.1rem; }
-  .products__node-name  { font-size: 0.58rem; }
-  .products__node-desc  { display: none; }
-  .products__center     { width: 66px; height: 66px; }
-  .products__center-icon { font-size: 1.25rem; }
-  .products__center-label { font-size: 0.5rem; }
+
+  .products__node-icon {
+    font-size: 1.1rem;
+  }
+
+  .products__node-name {
+    font-size: 0.58rem;
+  }
+
+  .products__node-desc {
+    display: none;
+  }
+
+  .products__center {
+    width: 66px;
+    height: 66px;
+  }
+
+  .products__center-icon {
+    font-size: 1.25rem;
+  }
+
+  .products__center-label {
+    font-size: 0.5rem;
+  }
 }

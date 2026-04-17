@@ -58,16 +58,15 @@ const serviceIcons = {
 };
 
 const serviceAccents = {
-  // "Rider App Tos": "#4f8ef7",
-  "Field Executives (Bikers)": "#f76b4f",
-  "Phlebotomist Services": "#e94f7c",
-  "Man Power Outsourcing": "#7c4ff7",
-  "Home Collection": "#00c48c",
+  "Field Executives (Bikers)": "#4fc3f7",
+  "Phlebotomist Services": "#4fc3f7",
+  "Man Power Outsourcing": "#4fc3f7",
+  "Home Collection": "#4fc3f7",
   "Cold Chain Logistics": "#4fc3f7",
-  "Corporate Health": "#f7a94f",
-  "Onsite Radiology Services": "#4ff7d0",
-  "Lab Technician": "#b04ff7",
-  "Customer Care Setup": "#f74f9e",
+  "Corporate Health": "#4fc3f7",
+  "Onsite Radiology Services": "#4fc3f7",
+  "Lab Technician": "#4fc3f7",
+  "Customer Care Setup": "#4fc3f7",
 };
 
 const servicesData = {
@@ -206,7 +205,7 @@ export default function Services({ onNavigate, initialSection }) {
 
       {/* HERO */}
       <div className="sv-hero">
-        <div className="sv-hero__inner">
+        {/* <div className="sv-hero__inner">
           <div className="sv-breadcrumb">
             <span className="sv-breadcrumb__link" onClick={() => onNavigate('home')}>Home</span>
             <span className="sv-breadcrumb__sep">›</span>
@@ -214,12 +213,12 @@ export default function Services({ onNavigate, initialSection }) {
           </div>
           <h1 className="sv-hero__title">Our Services</h1>
           <p className="sv-hero__sub">Comprehensive healthcare logistics and workforce solutions across India</p>
-        </div>
-        <div className="sv-hero__wave">
+        </div> */}
+        {/* <div className="sv-hero__wave">
           <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
             <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#f4f6fb" />
           </svg>
-        </div>
+        </div> */}
       </div>
 
       {/* MAIN LAYOUT */}
@@ -286,7 +285,7 @@ export default function Services({ onNavigate, initialSection }) {
           {/* CTA */}
           <div className="sv-cta">
             <button className="sv-cta__btn" style={{ background: accent }}
-              onClick={() => onNavigate('home')}>
+              onClick={() => onNavigate('home', null, 'contact')}>
               Get in Touch
             </button>
             <span className="sv-cta__note">Our team will reach out within 24 hours</span>

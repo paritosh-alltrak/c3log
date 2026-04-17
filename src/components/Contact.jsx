@@ -31,7 +31,8 @@ export default function Contact() {
               <span className="contact__info-icon">📍</span>
               <div>
                 <p className="contact__info-label">Headquarters</p>
-                <p className="contact__info-val">Delhi, India</p>
+                <p className="contact__info-val">B-3, Second Floor, Nimri Comm Complex,
+                  Ashok Vihar Ph-IV, Delhi-110052</p>
               </div>
             </div>
             <div className="contact__info-item">

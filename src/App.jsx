@@ -31,10 +31,17 @@ export default function App() {
   const [page, setPage] = useState('home')
   const [serviceSection, setServiceSection] = useState(null)
 
-  const navigate = (target, section) => {
+  const navigate = (target, section, scrollToId) => {
     setPage(target)
     if (target === 'services') setServiceSection(section || null)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (scrollToId) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollToId)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   return (
