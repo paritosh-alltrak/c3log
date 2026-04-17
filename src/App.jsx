@@ -25,6 +25,7 @@ import BusinessPartners from './components/BusinessPartners'
 import WorkingWithCredent from './components/WorkingWithCredent'
 import CurrentOpening from './components/CurrentOpening'
 import JobApplication from './components/JobApplication'
+import Ecosystem from './components/Ecosystem'
 import './App.css'
 
 export default function App() {
@@ -98,6 +99,10 @@ export default function App() {
 
       {page === 'products-page' && (
         <ProductsPage onNavigate={navigate} />
+      )}
+
+      {page === 'ecosystem' && (
+        <Ecosystem onNavigate={navigate} />
       )}
 
       <Footer onNavigate={navigate} />
