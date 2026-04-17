@@ -12,8 +12,6 @@ build/
 *.local
 
 # Env files
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -49,3 +47,4 @@ coverage/
 # Misc
 *.tgz
 *.bak
+config.bat

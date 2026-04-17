@@ -15,11 +15,17 @@ const careerItems = [
   { label: 'Job Application', page: 'job-application' },
 ]
 
+const productsItems = [
+  { label: 'All Products', page: 'products-page' },
+  { label: 'Ecosystem', page: 'ecosystem' },
+]
+
 export default function Navbar({ onNavigate, currentPage }) {
   const [open, setOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [careerOpen, setCareerOpen] = useState(false)
+  const [productsOpen, setProductsOpen] = useState(false)
 
   const handleNav = (page, section) => {
     if (onNavigate) onNavigate(page, section)
@@ -27,6 +33,7 @@ export default function Navbar({ onNavigate, currentPage }) {
     setAboutOpen(false)
     setServicesOpen(false)
     setCareerOpen(false)
+    setProductsOpen(false)
   }
 
   const handleHomeLink = (hash) => {
@@ -136,13 +143,32 @@ export default function Navbar({ onNavigate, currentPage }) {
             </ul>
           </li>
 
-          <li>
+          {/* PRODUCTS DROPDOWN */}
+          <li
+            className={`navbar__dropdown-wrap ${productsOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
             <span
-              className={`navbar__link ${currentPage === 'products-page' ? 'navbar__link--active' : ''}`}
+              className={`navbar__dropdown-trigger ${['products-page', 'ecosystem'].includes(currentPage) ? 'navbar__link--active' : ''}`}
               onClick={() => handleNav('products-page')}
             >
-              Products
+              Products <span className="navbar__chevron">▾</span>
             </span>
+            <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
+                {productsItems.map((item) => (
+                  <li key={item.page}>
+                    <span
+                      className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
+                      onClick={() => handleNav(item.page)}
+                    >
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
+              </div>
+            </ul>
           </li>
 
           <li>
