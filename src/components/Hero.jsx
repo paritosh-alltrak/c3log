@@ -2,7 +2,7 @@ import './Hero.css'
 
 const stats = [
   { value: '452+', label: 'Cities Across India' },
-  { value: '35+',  label: 'Air Routes — Sample Logistics' },
+  { value: '35+', label: 'Air Routes — Sample Logistics' },
   { value: '2–8°C', label: 'Temperature Precision — Cold Chain' },
   { value: '12 yr', label: 'In Operation — Trusted Nationwide' },
 ]
@@ -18,9 +18,9 @@ export default function Hero() {
           <div className="hero__badge">Pre-analytical logistics, reimagined</div>
 
           <h1 className="hero__headline">
-            Where healthcare<br />
-            <em>reaches you,</em><br />
-            we are already there.
+            Your sample <br />
+            <em>our trusted</em><br />
+            network.
           </h1>
 
           <p className="hero__sub">

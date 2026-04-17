@@ -1,36 +1,36 @@
 import './BusinessPartners.css'
 
 const partners = [
-  'Dr. Lal PathLabs',
-  'MAX Healthcare',
-  'Apollo Diagnostics',
-  'Sterling Accuris',
-  'Redcliffe Labs',
-  'Lupin Diagnostics',
-  'Neuberg',
-  'PathCare Diagnostics',
-  'Tata 1mg',
-  'CORE Diagnostics',
-  'Health Avenue',
-  'Genestrings',
-  'Dr. Dangs Lab',
-  'Northstar Pathology',
-  'OneCell Diagnostics',
-  'BeatO',
-  'Suburban Diagnostics',
-  'Rivaara Labs',
-  'Agilus Diagnostics',
-  'Medanta',
-  'Pathkind Labs',
-  'Metropolis',
-  'Aster Labs',
-  'Collateral Medical',
-  'AMPATH',
-  'LifeCell Diagnostics',
-  'Oncquest Labs',
-  'Reliance Life Sciences',
-  'mfine',
-  'Paliwal Diagnostics',
+  { name: 'Dr. Lal PathLabs',        logo: '/drlalpath.webp' },
+  { name: 'MAX Healthcare',           logo: '/max.webp' },
+  { name: 'Apollo Diagnostics',       logo: '/apollo.webp' },
+  { name: 'Sterling Accuris' },
+  { name: 'Redcliffe Labs',           logo: '/redcliff.webp' },
+  { name: 'Lupin Diagnostics',        logo: '/lupin.webp' },
+  { name: 'Neuberg',                  logo: '/neuberg.webp' },
+  { name: 'PathCare Diagnostics' },
+  { name: 'Tata 1mg' },
+  { name: 'CORE Diagnostics' },
+  { name: 'Health Avenue' },
+  { name: 'Genestrings' },
+  { name: 'Dr. Dangs Lab',            logo: '/drdangs.webp' },
+  { name: 'Northstar Pathology' },
+  { name: 'OneCell Diagnostics' },
+  { name: 'BeatO' },
+  { name: 'Suburban Diagnostics' },
+  { name: 'Rivaara Labs' },
+  { name: 'Agilus Diagnostics' },
+  { name: 'Medanta' },
+  { name: 'Pathkind Labs' },
+  { name: 'Metropolis',               logo: '/metropolis.webp' },
+  { name: 'Aster Labs' },
+  { name: 'Collateral Medical' },
+  { name: 'AMPATH' },
+  { name: 'LifeCell Diagnostics' },
+  { name: 'Oncquest Labs',            logo: '/onquest.webp' },
+  { name: 'Reliance Life Sciences' },
+  { name: 'mfine' },
+  { name: 'Paliwal Diagnostics' },
 ]
 
 export default function BusinessPartners() {
@@ -49,10 +49,9 @@ export default function BusinessPartners() {
         </div>
 
         <div className="bp__grid">
-          {partners.map((name) => (
+          {partners.filter(({ logo }) => logo).map(({ name, logo }) => (
             <div key={name} className="bp__chip">
-              <span className="bp__chip-dot" />
-              {name}
+              <img src={logo} alt={name} className="bp__chip-logo" />
             </div>
           ))}
         </div>

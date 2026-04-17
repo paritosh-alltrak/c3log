@@ -270,6 +270,13 @@
   line-height: 1;
 }
 
+.products__node-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .products__node-name {
   font-size: 0.68rem;
   font-weight: 700;

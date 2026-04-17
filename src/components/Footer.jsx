@@ -10,9 +10,9 @@ export default function Footer({ onNavigate }) {
     }, 50)
   }
 
-  const goPage = (page) => (e) => {
+  const goPage = (page, section) => (e) => {
     e.preventDefault()
-    if (onNavigate) onNavigate(page)
+    if (onNavigate) onNavigate(page, section)
   }
 
   return (
@@ -22,8 +22,8 @@ export default function Footer({ onNavigate }) {
         {/* Brand Column */}
         <div className="footer__brand">
           <a href="/" className="footer__logo-wrap" onClick={goPage('home')}>
-            <img src="/image.png" alt="C3 Logo" className="footer__logo-img" />
-            <span className="footer__brand-name">Credent Connect N Care</span>
+            {/* <img src="/image.png" alt="C3 Logo" className="footer__logo-img" /> */}
+            <span className="footer__brand-name">Credent Connect N Care Ltd.</span>
           </a>
           <p className="footer__tagline">
             Driving the future of healthcare logistics and workforce solutions
@@ -41,12 +41,12 @@ export default function Footer({ onNavigate }) {
         <div className="footer__col">
           <h4>Services</h4>
           <ul>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Phlebotomist Services</a></li>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Home Collection</a></li>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Cold Chain Logistics</a></li>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Corporate Wellness</a></li>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Lab Technicians</a></li>
-            <li><a href="#services" onClick={goHomeAnchor('#services')}>Onsite Radiology</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Phlebotomist Services')}>Phlebotomist Services</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Home Collection')}>Home Collection</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Cold Chain Logistics')}>Cold Chain Logistics</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Corporate Health')}>Corporate Wellness</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Lab Technician')}>Lab Technicians</a></li>
+            <li><a href="#services" onClick={goPage('services', 'Onsite Radiology Services')}>Onsite Radiology</a></li>
           </ul>
         </div>
 

@@ -43,8 +43,8 @@ export default function Journey() {
             Every point in the pre-analytical<br />journey. <em>Covered.</em>
           </h2>
           <p className="journey__desc">
-            From the patient's doorstep to the lab bench — we own every step,
-            so your results are never compromised.
+            seamless control across the entire pre analytical
+            network
           </p>
         </div>
 

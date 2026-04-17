@@ -2,63 +2,63 @@ import { useState, useEffect } from "react";
 import "./services.css";
 
 const serviceIcons = {
-  "Rider App Tos": (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="5" y="2" width="14" height="20" rx="2" /><line x1="12" y1="18" x2="12" y2="18.01" />
-    </svg>
-  ),
+  // "Rider App Tos": (
+  //   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //     <rect x="5" y="2" width="14" height="20" rx="2" /><line x1="12" y1="18" x2="12" y2="18.01" />
+  //   </svg>
+  // ),
   "Field Executives (Bikers)": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
-      <path d="M15 6h-4l-2 6h10l-1.5-4.5"/><path d="M15 6l1.5 4.5"/><circle cx="15" cy="4" r="1"/>
+      <circle cx="5.5" cy="17.5" r="3.5" /><circle cx="18.5" cy="17.5" r="3.5" />
+      <path d="M15 6h-4l-2 6h10l-1.5-4.5" /><path d="M15 6l1.5 4.5" /><circle cx="15" cy="4" r="1" />
     </svg>
   ),
   "Phlebotomist Services": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2L8 8h8l-4-6z"/><rect x="9" y="8" width="6" height="10" rx="1"/>
-      <path d="M9 13h6"/><circle cx="12" cy="20" r="1"/>
+      <path d="M12 2L8 8h8l-4-6z" /><rect x="9" y="8" width="6" height="10" rx="1" />
+      <path d="M9 13h6" /><circle cx="12" cy="20" r="1" />
     </svg>
   ),
   "Man Power Outsourcing": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
     </svg>
   ),
   "Home Collection": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
     </svg>
   ),
   "Cold Chain Logistics": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      <line x1="12" y1="2" x2="12" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
     </svg>
   ),
   "Corporate Health": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
     </svg>
   ),
   "Onsite Radiology Services": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+      <circle cx="12" cy="12" r="2" /><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
     </svg>
   ),
   "Lab Technician": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11l-4 5h14l-4-5V3"/>
+      <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11l-4 5h14l-4-5V3" />
     </svg>
   ),
   "Customer Care Setup": (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.46 2 2 0 0 1 3.91 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.46 2 2 0 0 1 3.91 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   ),
 };
 
 const serviceAccents = {
-  "Rider App Tos": "#4f8ef7",
+  // "Rider App Tos": "#4f8ef7",
   "Field Executives (Bikers)": "#f76b4f",
   "Phlebotomist Services": "#e94f7c",
   "Man Power Outsourcing": "#7c4ff7",
@@ -71,37 +71,7 @@ const serviceAccents = {
 };
 
 const servicesData = {
-  "Rider App Tos": {
-    title: "Rider App Terms of Service",
-    subtitle: "Digital task management for field riders",
-    highlights: ["Pre-assigned task execution", "Real-time GPS tracking", "Sample chain of custody", "Secure internal access"],
-    content: `
-      <p>Credent Rider App allows its own riders to perform following tasks:</p>
-      <ul>
-        <li>Perform the pre-assigned task via app.</li>
-        <li>Create the new task in app based on on-call assignments.</li>
-        <li>Pick-up the diagnostics samples from the assigned collection centres operated by company clients.</li>
-        <li>Handover the diagnostics samples to riders, hubs or labs and ensure that all samples reach to designated place.</li>
-        <li>Riders / Runners are company employees which use Rider app to perform day to day on-field task.</li>
-      </ul>
-      <p>By accessing our Rider App or our service, you accept this Privacy Policy and provide consent to provide required permission as needed by app to perform necessary tasks.</p>
-      <p>If you do not agree to be bound by these Terms of Use in their entirety, you may choose not use the Credent Rider App.</p>
-      <h3>About the Service</h3>
-      <p>The Service allows you to perform pre-assigned tasks, create new tasks based on on-call assignments, pick up diagnostics samples from assigned centres, and handover samples to riders, hubs or labs.</p>
-      <h3>Use Restrictions</h3>
-      <p>Your permission to use the Rider App is conditioned upon the following restrictions:</p>
-      <ul>
-        <li>Access the Service for any reason other than your professional requirements.</li>
-        <li>Collect or harvest any personal data of any user of the Service.</li>
-        <li>Use the Service for solicitation of business outside authorized scope.</li>
-        <li>Distribute any parts of the Service without permission.</li>
-        <li>Use the Service for unlawful purposes.</li>
-        <li>Attempt to harass, abuse or harm another person.</li>
-        <li>Provide false or inaccurate information.</li>
-        <li>Interfere with proper functioning of the Service.</li>
-      </ul>
-    `
-  },
+
   "Field Executives (Bikers)": {
     title: "Field Executives (Bikers)",
     subtitle: "Fast, GPS-enabled last-mile delivery across India",

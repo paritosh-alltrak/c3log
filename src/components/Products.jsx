@@ -1,14 +1,14 @@
 import './Products.css'
 
 const products = [
-  { icon: '🧬', name: 'C3Logistics',    desc: 'Cold-chain sample transport',  color: '#4f8ef7' },
-  { icon: '💉', name: 'C3 Wellness',    desc: 'At-home phlebotomy',           color: '#c084fc' },
-  { icon: '📡', name: 'C3 Post',        desc: 'Real-time sample visibility',  color: '#34d399' },
-  { icon: '🏥', name: 'C3 Retail',      desc: 'Collection centre network',    color: '#f472b6' },
-  { icon: '❄️', name: 'Connect N Grow', desc: 'Cryo & deep freeze logistics', color: '#60a5fa' },
-  { icon: '📋', name: 'HealthCare Job', desc: 'Audit & compliance suite',     color: '#fb923c' },
-  { icon: '🚀', name: 'AllTrak',        desc: 'Urgent same-day delivery',     color: '#facc15' },
-  { icon: '🔗', name: 'C3 HRMS',        desc: 'Lab integration platform',     color: '#2dd4bf' },
+  { icon: '🧬', name: 'C3Logistics', desc: '', color: '#4f8ef7' },
+  { icon: '💉', name: 'C3 Wellness', desc: '', color: '#c084fc', img: '/c3wellness.webp' },
+  { icon: '📡', name: 'C3 Post', desc: '', color: '#34d399', img: '/c3post.webp' },
+  { icon: '🏥', name: 'C3 Retail', desc: '', color: '#f472b6', img: '/c3retail.png' },
+  { icon: '❄️', name: 'Connect N Grow', desc: '', color: '#60a5fa', img: '/connectandgrow.webp' },
+  { icon: '📋', name: 'HealthCare Job', desc: '', color: '#fb923c', img: '/healthcarejob.webp' },
+  { icon: '🚀', name: 'AllTrak', desc: '', color: '#facc15' },
+  { icon: '🔗', name: 'C3 HRMS', desc: '', color: '#2dd4bf' },
 ]
 
 const SIZE = 600
@@ -38,7 +38,7 @@ const nodes = products.map((p, i) => {
 const STARS = Array.from({ length: 90 }, (_, i) => ({
   cx: (Math.sin(i * 2.399) * 0.47 + 0.5) * SIZE,
   cy: (Math.cos(i * 2.399) * 0.47 + 0.5) * SIZE,
-  r:  [0.65, 0.9, 1.2, 0.5, 0.8][i % 5],
+  r: [0.65, 0.9, 1.2, 0.5, 0.8][i % 5],
   cls: `pstar pstar--${i % 4}`,
   style: {
     '--dur': `${2.2 + (i % 7) * 0.55}s`,
@@ -53,7 +53,7 @@ export default function Products() {
         <div className="products__header">
           <p className="section-label">Platform</p>
           <h2 className="products__title">
-            Eight products.<br />
+            Eight Verticals.<br />
             <em>One healthcare operating system.</em>
           </h2>
           <p className="products__desc">
@@ -73,15 +73,15 @@ export default function Products() {
             <defs>
               {/* Galaxy core gradient */}
               <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
-                <stop offset="0%"   stopColor="#7c3aed" stopOpacity="0.95" />
-                <stop offset="28%"  stopColor="#4f8ef7" stopOpacity="0.6"  />
-                <stop offset="65%"  stopColor="#1e3a6e" stopOpacity="0.2"  />
-                <stop offset="100%" stopColor="#080d1a" stopOpacity="0"    />
+                <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.95" />
+                <stop offset="28%" stopColor="#4f8ef7" stopOpacity="0.6" />
+                <stop offset="65%" stopColor="#1e3a6e" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#080d1a" stopOpacity="0" />
               </radialGradient>
               {/* Specular shine on core */}
               <radialGradient id="gShine" cx="38%" cy="32%" r="55%">
-                <stop offset="0%"   stopColor="#ffffff" stopOpacity="0.65" />
-                <stop offset="55%"  stopColor="#a78bfa" stopOpacity="0.18" />
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.65" />
+                <stop offset="55%" stopColor="#a78bfa" stopOpacity="0.18" />
                 <stop offset="100%" stopColor="transparent" stopOpacity="0" />
               </radialGradient>
               {/* Soft glow filter for arms */}
@@ -101,8 +101,8 @@ export default function Products() {
                 <linearGradient key={i} id={`gA${i}`}
                   gradientUnits="userSpaceOnUse"
                   x1={CX} y1={CY} x2={n.x} y2={n.y}>
-                  <stop offset="0%"   stopColor={n.color} stopOpacity="0.95" />
-                  <stop offset="100%" stopColor={n.color} stopOpacity="0.3"  />
+                  <stop offset="0%" stopColor={n.color} stopOpacity="0.95" />
+                  <stop offset="100%" stopColor={n.color} stopOpacity="0.3" />
                 </linearGradient>
               ))}
             </defs>
@@ -236,13 +236,16 @@ export default function Products() {
               className="products__node"
               style={{
                 left: `${(n.x / SIZE) * 100}%`,
-                top:  `${(n.y / SIZE) * 100}%`,
+                top: `${(n.y / SIZE) * 100}%`,
                 '--accent': n.color,
                 animationDelay: `${i * 0.14}s`,
               }}
             >
               <div className="products__node-card">
-                <span className="products__node-icon">{n.icon}</span>
+                {n.img
+                  ? <img src={n.img} alt={n.name} className="products__node-img" />
+                  : <span className="products__node-icon">{n.icon}</span>
+                }
                 <span className="products__node-name">{n.name}</span>
                 <span className="products__node-desc">{n.desc}</span>
               </div>

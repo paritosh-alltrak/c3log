@@ -3,22 +3,24 @@ import './TrustedBy.css'
 
 const testimonials = [
   {
-    quote: "C3log has transformed how we think about pre-analytical logistics. Their cold chain reliability is unmatched across India.",
+    quote: "C3logistics has transformed how we think about pre-analytical logistics. Their cold chain reliability is unmatched across India.",
     author: "Dr. Suresh Nair",
     role: "Head of Operations, Apollo Diagnostics",
+    logo: "/appolo",
     videoId: "LXKz51ZUypc",
     videoSi: "qLaV0rWxoofnigG4",
   },
   {
     quote: "Credent launches India's largest Electric Vehicle (EV) Healthcare Delivery Fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
-    author: "Rajesh Mehta",
-    role: "Director, Healthcare Logistics India",
+    author: "Nishant Singhal",
+    role: "Board Member & CEO, Healthians",
+    logo: "/healthians",
     videoId: "zKEOH5j0L48",
     videoSi: "E_TSimD5-_cbJpLv",
   },
   {
     quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
-    author: "Priya Sharma",
+    author: "Rajdeep Panvar",
     role: "Editor, MedTech Times",
     videoId: "0_v1O2gAKl4",
     videoSi: "CiG5LM3mUk9osxeC",
