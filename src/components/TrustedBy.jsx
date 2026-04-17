@@ -13,15 +13,15 @@ const testimonials = [
     quote: "Credent launches India's largest Electric Vehicle (EV) Healthcare Delivery Fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
     author: "Rajesh Mehta",
     role: "Director, Healthcare Logistics India",
-    videoId: "LXKz51ZUypc",
-    videoSi: "qLaV0rWxoofnigG4",
+    videoId: "zKEOH5j0L48",
+    videoSi: "E_TSimD5-_cbJpLv",
   },
   {
     quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
     author: "Priya Sharma",
     role: "Editor, MedTech Times",
-    videoId: "LXKz51ZUypc",
-    videoSi: "qLaV0rWxoofnigG4",
+    videoId: "0_v1O2gAKl4",
+    videoSi: "CiG5LM3mUk9osxeC",
   },
 ]
 
@@ -77,7 +77,7 @@ export default function TrustedBy() {
           <div className="carousel__controls">
             <button className="carousel__btn" onClick={prev} aria-label="Previous">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
 
@@ -94,7 +94,7 @@ export default function TrustedBy() {
 
             <button className="carousel__btn" onClick={next} aria-label="Next">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>

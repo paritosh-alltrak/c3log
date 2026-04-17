@@ -92,7 +92,7 @@ export default function Footer({ onNavigate }) {
       </div>
 
       <div className="footer__bottom">
-        <p>© 2026 Credent Connect N Care Pvt. Ltd. All rights reserved.</p>
+        <p>© 2026 Credent Connect N Care Ltd. All rights reserved.</p>
         <div className="footer__bottom-links">
           <a href="#privacy" onClick={goPage('privacy-policy')}>Privacy Policy</a>
           <a href="#terms" onClick={goPage('terms-of-use')}>Terms of Use</a>
