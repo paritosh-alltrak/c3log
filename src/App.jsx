@@ -25,6 +25,8 @@ import BusinessPartners from './components/BusinessPartners'
 import WorkingWithCredent from './components/WorkingWithCredent'
 import CurrentOpening from './components/CurrentOpening'
 import JobApplication from './components/JobApplication'
+import PhotoGallery from './components/PhotoGallery'
+import KeyDifferentiators from './components/KeyDifferentiators'
 import './App.css'
 
 export default function App() {
@@ -105,6 +107,14 @@ export default function App() {
 
       {page === 'products-page' && (
         <ProductsPage onNavigate={navigate} />
+      )}
+
+      {page === 'photo-gallery' && (
+        <PhotoGallery onNavigate={navigate} />
+      )}
+
+      {page === 'key-differentiators' && (
+        <KeyDifferentiators onNavigate={navigate} />
       )}
 
       <Footer onNavigate={navigate} />

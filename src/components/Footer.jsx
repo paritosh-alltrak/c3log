@@ -26,8 +26,7 @@ export default function Footer({ onNavigate }) {
             <span className="footer__brand-name">Credent Connect N Care Ltd.</span>
           </a>
           <p className="footer__tagline">
-            Driving the future of healthcare logistics and workforce solutions
-            with technology, expertise, and Pan-India scale since 2012.
+            India's trusted healthcare operations partner. Where care keeps moving.
           </p>
           {/* <div className="footer__socials">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="footer__social-btn">f</a>
@@ -96,8 +95,8 @@ export default function Footer({ onNavigate }) {
         <p>© 2026 Credent Connect N Care Ltd. All rights reserved.</p>
         <div className="footer__bottom-links">
           <a href="#privacy" onClick={goPage('privacy-policy')}>Privacy Policy</a>
-          <a href="#terms" onClick={goPage('terms-of-use')}>Terms of Use</a>
-          <a href="#sitemap" onClick={goPage('sitemap')}>Sitemap</a>
+          {/* <a href="#terms" onClick={goPage('terms-of-use')}>Terms of Use</a>
+          <a href="#sitemap" onClick={goPage('sitemap')}>Sitemap</a> */}
         </div>
       </div>
     </footer>

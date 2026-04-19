@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react'
 import './JourneyTracker.css'
 
 const stops = [
-  { label: 'HOME', position: 0 },
-  { label: 'PICKUP', position: 25 },
-  { label: 'TRANSIT', position: 50 },
-  { label: 'COLD HUB', position: 75 },
-  { label: 'LAB', position: 100 },
+  { label: 'Booking Confirmed', position: 0 },
+  { label: 'Agent Dispatched', position: 25 },
+  { label: 'Sample Acquisition', position: 50 },
+  { label: 'Secure Transit', position: 75 },
+  { label: 'Lab Handover', position: 100 },
 ]
+
+
 
 const ScooterSVG = () => (
   <img src="/rider.png" alt="scooter" width="60" height="40" style={{ display: 'block' }} />

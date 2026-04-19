@@ -1,14 +1,14 @@
 import './Products.css'
 
 const products = [
-  { icon: '🧬', name: 'C3Logistics', desc: '', color: '#4f8ef7' },
+  { icon: '🧬', name: 'C3Logistics', desc: '', color: '#4f8ef7', img: '/image.png' },
   { icon: '💉', name: 'C3 Wellness', desc: '', color: '#c084fc', img: '/c3wellness.webp' },
   { icon: '📡', name: 'C3 Post', desc: '', color: '#34d399', img: '/c3post.webp' },
   { icon: '🏥', name: 'C3 Retail', desc: '', color: '#f472b6', img: '/c3retail.png' },
   { icon: '❄️', name: 'Connect N Grow', desc: '', color: '#60a5fa', img: '/connectandgrow.webp' },
   { icon: '📋', name: 'HealthCare Job', desc: '', color: '#fb923c', img: '/healthcarejob.webp' },
-  { icon: '🚀', name: 'AllTrak', desc: '', color: '#facc15' },
-  { icon: '🔗', name: 'C3 HRMS', desc: '', color: '#2dd4bf' },
+  { icon: '🚀', name: 'AllTrak', desc: '', color: '#facc15', img: '/alltrak.png' },
+  { icon: '🔗', name: 'C3 HRMS', desc: '', color: '#2dd4bf', img: '/c3hrms.png' },
 ]
 
 const SIZE = 600

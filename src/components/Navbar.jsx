@@ -20,6 +20,7 @@ export default function Navbar({ onNavigate, currentPage }) {
   const [aboutOpen, setAboutOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [careerOpen, setCareerOpen] = useState(false)
+  const [whyUsOpen, setWhyUsOpen] = useState(false)
 
   const handleNav = (page, section) => {
     if (onNavigate) onNavigate(page, section)
@@ -27,6 +28,7 @@ export default function Navbar({ onNavigate, currentPage }) {
     setAboutOpen(false)
     setServicesOpen(false)
     setCareerOpen(false)
+    setWhyUsOpen(false)
   }
 
   const handleHomeLink = (hash) => {
@@ -54,6 +56,31 @@ export default function Navbar({ onNavigate, currentPage }) {
         {/* CENTER: NAV LINKS */}
         <ul className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
 
+          <li
+            className={`navbar__dropdown-wrap ${aboutOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <span className="navbar__dropdown-trigger">
+              About Us <span className="navbar__chevron">▾</span>
+            </span>
+
+            <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
+                {aboutItems.map((item) => (
+                  <li key={item.page}>
+                    <span
+                      className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
+                      onClick={() => handleNav(item.page)}
+                    >
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
+              </div>
+            </ul>
+          </li>
+
 
           {/* SERVICES DROPDOWN */}
           <li
@@ -70,44 +97,62 @@ export default function Navbar({ onNavigate, currentPage }) {
 
             <ul className="navbar__dropdown">
               <div className="navbar__dropdown-inner">
-              {serviceSections.map((label) => (
-                <li key={label}>
-                  <span
-                    className="navbar__dropdown-item"
-                    onClick={() => handleNav('services', label)}
-                  >
-                    {label}
-                  </span>
-                </li>
-              ))}
+                {serviceSections.map((label) => (
+                  <li key={label}>
+                    <span
+                      className="navbar__dropdown-item"
+                      onClick={() => handleNav('services', label)}
+                    >
+                      {label}
+                    </span>
+                  </li>
+                ))}
               </div>
             </ul>
           </li>
 
+          {/* WHY US DROPDOWN */}
           <li
-            className={`navbar__dropdown-wrap ${aboutOpen ? 'navbar__dropdown-wrap--open' : ''}`}
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
+            className={`navbar__dropdown-wrap ${whyUsOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setWhyUsOpen(true)}
+            onMouseLeave={() => setWhyUsOpen(false)}
           >
-            <span className="navbar__dropdown-trigger">
-              About Us <span className="navbar__chevron">▾</span>
+            <span
+              className={`navbar__dropdown-trigger ${['photo-gallery', 'key-differentiators'].includes(currentPage) ? 'navbar__link--active' : ''}`}
+            >
+              Why Us <span className="navbar__chevron">▾</span>
             </span>
-
             <ul className="navbar__dropdown">
               <div className="navbar__dropdown-inner">
-              {aboutItems.map((item) => (
-                <li key={item.page}>
+                <li>
                   <span
-                    className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
-                    onClick={() => handleNav(item.page)}
+                    className={`navbar__dropdown-item ${currentPage === 'photo-gallery' ? 'navbar__dropdown-item--active' : ''}`}
+                    onClick={() => handleNav('photo-gallery')}
                   >
-                    {item.label}
+                    Photo Gallery
                   </span>
                 </li>
-              ))}
+                <li>
+                  <span
+                    className={`navbar__dropdown-item ${currentPage === 'key-differentiators' ? 'navbar__dropdown-item--active' : ''}`}
+                    onClick={() => handleNav('key-differentiators')}
+                  >
+                    Our Key Differentiators
+                  </span>
+                </li>
               </div>
             </ul>
           </li>
+
+          <li>
+            <span
+              className={`navbar__link ${currentPage === 'training' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('training')}
+            >
+              Training
+            </span>
+          </li>
+
 
           {/* CAREER DROPDOWN */}
           <li
@@ -122,16 +167,16 @@ export default function Navbar({ onNavigate, currentPage }) {
             </span>
             <ul className="navbar__dropdown">
               <div className="navbar__dropdown-inner">
-              {careerItems.map((item) => (
-                <li key={item.page}>
-                  <span
-                    className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
-                    onClick={() => handleNav(item.page)}
-                  >
-                    {item.label}
-                  </span>
-                </li>
-              ))}
+                {careerItems.map((item) => (
+                  <li key={item.page}>
+                    <span
+                      className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''}`}
+                      onClick={() => handleNav(item.page)}
+                    >
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
               </div>
             </ul>
           </li>
@@ -142,15 +187,6 @@ export default function Navbar({ onNavigate, currentPage }) {
               onClick={() => handleNav('products-page')}
             >
               Products
-            </span>
-          </li>
-
-          <li>
-            <span
-              className={`navbar__link ${currentPage === 'training' ? 'navbar__link--active' : ''}`}
-              onClick={() => handleNav('training')}
-            >
-              Training
             </span>
           </li>
 
