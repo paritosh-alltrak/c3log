@@ -39,6 +39,12 @@
   border: none;
   box-shadow: none;
   height: 380px;
+  animation: slide-fade-in 0.4s ease both;
+}
+
+@keyframes slide-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .trusted__testimonial .testimonial__video-wrapper {

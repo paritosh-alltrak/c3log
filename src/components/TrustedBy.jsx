@@ -85,7 +85,7 @@ export default function TrustedBy() {
         </div>
 
         <div className="testimonial__carousel">
-          <div className="trusted__testimonial">
+          <div className="trusted__testimonial" key={active}>
             {/* Video — left */}
             <div className="testimonial__video-wrapper">
               <iframe
@@ -111,17 +111,19 @@ export default function TrustedBy() {
                 </div>
               </div>
             </div> */}
-            <div className="testimonial__video-wrapper">
-              <iframe
-                key={item2.videoId}
-                src={`https://www.youtube.com/embed/${item2.videoId}?si=${item2.videoSi}`}
-                title="YouTube video player"
-                style={{ border: 'none' }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+            {item2 && (
+              <div className="testimonial__video-wrapper">
+                <iframe
+                  key={item2.videoId}
+                  src={`https://www.youtube.com/embed/${item2.videoId}?si=${item2.videoSi}`}
+                  title="YouTube video player"
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            )}
           </div>
 
           {/* Controls */}
