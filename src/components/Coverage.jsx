@@ -8,10 +8,10 @@ export default function Coverage() {
 
         {/* ── Left text ── */}
         <div className="coverage__text">
-          <p className="section-label">Pan-India network</p>
+          <p className="section-label">Intercity network</p>
           <h2 className="coverage__title">
             Air. Road. Train.<br />
-            <span>100+ cities.</span><br />
+            <span>452+ cities.</span><br />
             <em>Nothing stops.</em>
           </h2>
           <p className="coverage__desc">
@@ -35,8 +35,8 @@ export default function Coverage() {
 
           <div className="coverage__highlights">
             {[
-              { num: '632+', text: 'Cities covered' },
-              { num: '100', text: 'Priority hubs' },
+              { num: '452+', text: 'Cities covered' },
+              { num: '23000', text: 'Pincodes' },
               { num: '24/7', text: 'Operations' },
             ].map((h) => (
               <div key={h.num} className="coverage__hl">

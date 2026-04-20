@@ -3,12 +3,11 @@ import './TrustedBy.css'
 
 const testimonials = [
   {
-    quote: "C3logistics has transformed how we think about pre-analytical logistics. Their cold chain reliability is unmatched across India.",
-    author: "Dr. Suresh Nair",
-    role: "Head of Operations, Apollo Diagnostics",
-    logo: "/appolo",
-    videoId: "LXKz51ZUypc",
-    videoSi: "qLaV0rWxoofnigG4",
+    quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
+    author: "Rajdeep Panvar",
+    role: "Editor, MedTech Times",
+    videoId: "0_v1O2gAKl4",
+    videoSi: "CiG5LM3mUk9osxeC",
   },
   {
     quote: "Credent launches India's largest Electric Vehicle (EV) Healthcare Delivery Fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
@@ -22,26 +21,52 @@ const testimonials = [
     quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
     author: "Rajdeep Panvar",
     role: "Editor, MedTech Times",
-    videoId: "0_v1O2gAKl4",
-    videoSi: "CiG5LM3mUk9osxeC",
+    videoId: "rOVqH2Qw3tE",
+    videoSi: "g8k4thoZLfyQ_Xu",
+  },
+
+  {
+    quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
+    author: "Rajdeep Panvar",
+    role: "Editor, MedTech Times",
+    videoId: "TBfJBO5W3Ag",
+    videoSi: "YK8souVOSBfQWCZE",
+  },
+  {
+    quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
+    author: "Rajdeep Panvar",
+    role: "Editor, MedTech Times",
+    videoId: "FuOJqGmMhCg",
+    videoSi: "lpdreW0F9b4SHi-R",
+  },
+  {
+    quote: "New Delhi [India], May 29: Credent, known as C3 Logistics is launching India's largest electric vehicle (EV) healthcare delivery fleet. This is a daring initiative that will surely help the healthcare sector's sustainability efforts.",
+    author: "Rajdeep Panvar",
+    role: "Editor, MedTech Times",
+    videoId: "W4QLvhrzZLQ",
+    videoSi: "Ixx1TRz86B4rX8CF",
   },
 ]
+
+
+const PAIR_COUNT = Math.ceil(testimonials.length / 2)
 
 export default function TrustedBy() {
   const [active, setActive] = useState(0)
   const paused = useRef(false)
 
-  const prev = () => setActive((a) => (a - 1 + testimonials.length) % testimonials.length)
-  const next = () => setActive((a) => (a + 1) % testimonials.length)
+  const prev = () => setActive((a) => (a - 1 + PAIR_COUNT) % PAIR_COUNT)
+  const next = () => setActive((a) => (a + 1) % PAIR_COUNT)
 
   useEffect(() => {
     const id = setInterval(() => {
-      if (!paused.current) setActive((a) => (a + 1) % testimonials.length)
+      if (!paused.current) setActive((a) => (a + 1) % PAIR_COUNT)
     }, 5000)
     return () => clearInterval(id)
   }, [])
 
-  const item = testimonials[active]
+  const item = testimonials[active * 2]
+  const item2 = testimonials[active * 2 + 1]
 
   return (
     <section
@@ -75,7 +100,7 @@ export default function TrustedBy() {
             </div>
 
             {/* Content — right */}
-            <div className="testimonial__body">
+            {/* <div className="testimonial__body">
               <div className="testimonial__quote-mark">"</div>
               <p className="testimonial__text">{item.quote}</p>
               <div className="testimonial__author">
@@ -85,6 +110,17 @@ export default function TrustedBy() {
                   <p className="testimonial__role">{item.role}</p>
                 </div>
               </div>
+            </div> */}
+            <div className="testimonial__video-wrapper">
+              <iframe
+                key={item2.videoId}
+                src={`https://www.youtube.com/embed/${item2.videoId}?si=${item2.videoSi}`}
+                title="YouTube video player"
+                style={{ border: 'none' }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
 
@@ -97,7 +133,7 @@ export default function TrustedBy() {
             </button>
 
             <div className="carousel__dots">
-              {testimonials.map((_, i) => (
+              {Array.from({ length: PAIR_COUNT }).map((_, i) => (
                 <button
                   key={i}
                   className={`carousel__dot${i === active ? ' carousel__dot--active' : ''}`}

@@ -32,12 +32,12 @@ export default function CompanyProfile({ onNavigate }) {
                 <span className="cp-card__stat-lbl">Founded</span>
               </div>
               <div className="cp-card__stat">
-                <span className="cp-card__stat-val">451+</span>
+                <span className="cp-card__stat-val">452+</span>
                 <span className="cp-card__stat-lbl">Cities</span>
               </div>
               <div className="cp-card__stat">
-                <span className="cp-card__stat-val">4500+</span>
-                <span className="cp-card__stat-lbl">Clients</span>
+                <span className="cp-card__stat-val">6500+</span>
+                <span className="cp-card__stat-lbl">Field Force</span>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ export default function CompanyProfile({ onNavigate }) {
               6 more employees. With our Head Office in Delhi and{' '}
               <strong>10 branch offices pan-India</strong>, Credent has established its presence
               in more than <strong>452 cities</strong> with over{' '}
-              <strong>4,500+ personnel</strong> on the Credent payroll.
+              <strong>6,500+ personnel</strong> on the Credent payroll.
             </p>
             <p>
               Today the Credent Group comprises three companies catering to diverse client needs:
@@ -113,7 +113,7 @@ export default function CompanyProfile({ onNavigate }) {
             </ul>
             <p>
               Our network is our core strength — 35+ air connectivity routes, 5+ OTC routes,
-              6+ vans, ~2,500 field executives with bikes, and ~2,000 phlebotomists covering
+              6+ vans, ~3,000 field executives with bikes, and ~3,500 phlebotomists covering
               every part of Pan-India as per client demand.
             </p>
           </div>
