@@ -34,12 +34,24 @@
 .trusted__testimonial {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(13, 38, 72, 0.09);
+  gap: 20px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   height: 380px;
+  animation: slide-fade-in 0.4s ease both;
+}
+
+@keyframes slide-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.trusted__testimonial .testimonial__video-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(13, 38, 72, 0.09);
 }
 
 /* ── Video panel ── */

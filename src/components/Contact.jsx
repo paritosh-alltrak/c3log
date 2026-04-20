@@ -80,7 +80,7 @@ export default function Contact() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Dr. Priya Sharma"
+                    // placeholder="Dr. Priya Sharma"
                     required
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                     name="org"
                     value={form.org}
                     onChange={handleChange}
-                    placeholder="Apollo Diagnostics"
+                    // placeholder="Apollo Diagnostics"
                     required
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="priya@apollo.com"
+                    // placeholder="priya@apollo.com"
                     required
                   />
                 </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="+91 98765 43210"
+                  // placeholder="+91 98765 43210"
                   />
                 </div>
               </div>

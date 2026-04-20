@@ -4,7 +4,9 @@ const stats = [
   { value: '452+', label: 'Cities Across India' },
   { value: '35+', label: 'Air Routes — Sample Logistics' },
   { value: '2–8°C', label: 'Temperature Precision — Cold Chain' },
-  { value: '12 yr', label: 'In Operation — Trusted Nationwide' },
+  { value: '14+ yr', label: 'In Operations — Trusted Nationwide' },
+  { value: '6500+', label: 'Field Force — Pan India' },
+
 ]
 
 export default function Hero() {
@@ -18,7 +20,7 @@ export default function Hero() {
           <div className="hero__badge">Pre-analytical logistics, reimagined</div>
 
           <h1 className="hero__headline">
-            Your sample <em>our </em><br />
+            Your sample, <em>Our </em><br />
             <em>trusted</em> network.
           </h1>
 
