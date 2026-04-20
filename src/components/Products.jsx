@@ -44,13 +44,28 @@ const products = [
     desc: 'Complete HR lifecycle management designed for healthcare organizations — attendance, payroll, training, and compliance in one platform.',
     features: ['Attendance & leave', 'Payroll processing', 'Training management', 'Document vault', 'Compliance reports'],
   },
+  {
+    name: 'Connect N Grow',
+    img: '/connectandgrow.webp',
+    tagline: 'Partner network platform',
+    desc: 'A collaborative platform connecting healthcare partners, vendors, and service providers to grow together within the Credent ecosystem.',
+    features: ['Partner onboarding', 'Network analytics', 'Collaboration tools', 'Revenue sharing', 'Growth tracking'],
+  },
+  {
+    name: 'AllTrak',
+    img: '/alltrak.png',
+    tagline: 'Asset & fleet tracking',
+    desc: 'Real-time asset and fleet tracking system for healthcare logistics — monitor vehicles, equipment, and shipments across the supply chain.',
+    features: ['Live GPS tracking', 'Fleet management', 'Asset tagging', 'Geofencing alerts', 'Utilization reports'],
+  },
 ]
 
 const CX = 350, CY = 350, SIZE = 700
 const orbitDefs = [
   { rx: 280, ry: 120, tilt: -35, angles: [0, 180], productIdx: [0, 1] },
-  { rx: 280, ry: 120, tilt:  35, angles: [0, 180], productIdx: [2, 3] },
-  { rx: 280, ry: 120, tilt:  90, angles: [0, 180], productIdx: [4, 5] },
+  { rx: 280, ry: 120, tilt:   0, angles: [0, 180], productIdx: [2, 3] },
+  { rx: 280, ry: 120, tilt:  35, angles: [0, 180], productIdx: [4, 5] },
+  { rx: 280, ry: 120, tilt:  90, angles: [0, 180], productIdx: [6, 7] },
 ]
 
 function ellipsePoint(rx, ry, tiltDeg, angleDeg) {
@@ -78,13 +93,9 @@ function ellipsePerimeter(rx, ry) {
 }
 
 export default function Products() {
-  const [active, setActive] = useState(null) // index into products[]
+  const [hovered, setHovered] = useState(null)
 
-  const handleClick = (idx) => {
-    setActive(active === idx ? null : idx)
-  }
-
-  const activeProduct = active !== null ? products[active] : null
+  const hoveredProduct = hovered !== null ? products[hovered] : null
 
   return (
     <section className="products" id="products">
@@ -92,7 +103,7 @@ export default function Products() {
         <div className="products__header">
           <p className="section-label">Platform</p>
           <h2 className="products__title">
-            Six Verticals.<br />
+            Eight Verticals.<br />
             <em>One healthcare operating system.</em>
           </h2>
           <p className="products__desc">
@@ -101,9 +112,8 @@ export default function Products() {
           </p>
         </div>
 
-        <div className={`products__stage ${active !== null ? 'products__stage--active' : ''}`}>
-          {/* ── Left: atom diagram ── */}
-          <div className={`products__atom ${active !== null ? 'products__atom--shrunk' : ''}`}>
+        <div className="products__stage">
+          <div className="products__atom">
             <svg
               className="products__svg"
               viewBox={`0 0 ${SIZE} ${SIZE}`}
@@ -140,7 +150,7 @@ export default function Products() {
                       strokeWidth="3.5"
                       strokeDasharray={`${dashLen} ${gapLen}`}
                       strokeLinecap="round"
-                      className={`products__flow ${active !== null ? 'products__flow--paused' : ''}`}
+                      className={`products__flow ${hovered !== null ? 'products__flow--paused' : ''}`}
                       style={{
                         '--perim': perim,
                         '--dur': `${4 + i * 1.5}s`,
@@ -152,61 +162,48 @@ export default function Products() {
               })}
             </svg>
 
-            <div className="products__hub">
+            {/* Center hub — shrinks when any logo is hovered */}
+            <div className={`products__hub ${hovered !== null ? 'products__hub--shrunk' : ''}`}>
               <img src="/cnclogo.png" alt="Credent ConnectCare" className="products__hub-logo" />
             </div>
 
+            {/* Product logos */}
             {cards.map((c) => (
               <div
                 key={c.name}
-                className={`products__card ${active === c.idx ? 'products__card--active' : ''}`}
+                className={`products__card ${hovered === c.idx ? 'products__card--active' : ''}`}
                 style={{
                   left: `${(c.x / SIZE) * 100}%`,
                   top:  `${(c.y / SIZE) * 100}%`,
                 }}
-                onClick={() => handleClick(c.idx)}
+                onMouseEnter={() => setHovered(c.idx)}
+                onMouseLeave={() => setHovered(null)}
               >
                 <img src={c.img} alt={c.name} className="products__card-img" />
+
+                {/* Tooltip detail card */}
+                {hovered === c.idx && hoveredProduct && (
+                  <div className="products__tooltip">
+                    <div className="products__tooltip-head">
+                      <img src={hoveredProduct.img} alt={hoveredProduct.name} className="products__tooltip-logo" />
+                      <div>
+                        <h4 className="products__tooltip-name">{hoveredProduct.name}</h4>
+                        <p className="products__tooltip-tagline">{hoveredProduct.tagline}</p>
+                      </div>
+                    </div>
+                    <p className="products__tooltip-desc">{hoveredProduct.desc}</p>
+                    <ul className="products__tooltip-features">
+                      {hoveredProduct.features.map((f, i) => (
+                        <li key={f} style={{ animationDelay: `${0.06 + i * 0.04}s` }}>
+                          <span className="products__tooltip-check">&#10003;</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
-          </div>
-
-          {/* ── Right: detail panel ── */}
-          <div className={`products__detail ${active !== null ? 'products__detail--visible' : ''}`}>
-            {activeProduct && (
-              <div className="products__detail-content" key={active}>
-                <button
-                  className="products__detail-close"
-                  onClick={() => setActive(null)}
-                  aria-label="Close"
-                >
-                  &times;
-                </button>
-
-                <div className="products__detail-head">
-                  <img
-                    src={activeProduct.img}
-                    alt={activeProduct.name}
-                    className="products__detail-logo"
-                  />
-                  <div>
-                    <h3 className="products__detail-name">{activeProduct.name}</h3>
-                    <p className="products__detail-tagline">{activeProduct.tagline}</p>
-                  </div>
-                </div>
-
-                <p className="products__detail-desc">{activeProduct.desc}</p>
-
-                <ul className="products__detail-features">
-                  {activeProduct.features.map((f, i) => (
-                    <li key={f} style={{ animationDelay: `${0.15 + i * 0.07}s` }}>
-                      <span className="products__detail-check">&#10003;</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </div>
