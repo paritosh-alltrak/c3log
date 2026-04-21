@@ -6,7 +6,7 @@
 
 /* ── Intro ──────────────────────────────────────── */
 .inv-intro {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 24px 36px;
   text-align: center;
@@ -56,129 +56,106 @@
 
 /* ── Content ────────────────────────────────────── */
 .inv-content {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 24px 80px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
 }
 
 /* ── Section ────────────────────────────────────── */
 .inv-section__heading {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0d1b2e;
-  margin: 0 0 12px;
-  padding-left: 12px;
-  border-left: 4px solid #4f8ef7;
+  margin: 0 0 14px;
 }
 
 .inv-section__groups {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-/* ── Accordion ──────────────────────────────────── */
-.inv-accordion {
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  gap: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
   overflow: hidden;
-  transition: box-shadow 0.2s;
 }
 
-.inv-accordion--open {
-  box-shadow: 0 4px 16px rgba(79, 142, 247, 0.08);
+/* ── Group ──────────────────────────────────────── */
+.inv-group {
+  border-bottom: 1px solid #d1d5db;
 }
 
-.inv-accordion__header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  gap: 12px;
-  transition: background 0.15s;
+.inv-group:last-child {
+  border-bottom: none;
 }
 
-.inv-accordion__header:hover {
-  background: #f8faff;
-}
-
-.inv-accordion__title {
-  font-size: 0.97rem;
+.inv-group__header {
+  background: #f3f4f6;
+  padding: 12px 20px;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #0d1b2e;
+  color: #111827;
+  border-bottom: 1px solid #d1d5db;
 }
 
-.inv-accordion--open .inv-accordion__title {
-  color: #4f8ef7;
+.inv-group__body {
+  background: #fff;
+  padding: 4px 0;
 }
 
-.inv-accordion__arrow {
-  font-size: 0.7rem;
-  color: #94a3b8;
-  flex-shrink: 0;
-  transition: color 0.2s;
-}
-
-.inv-accordion--open .inv-accordion__arrow {
-  color: #4f8ef7;
-}
-
-/* ── Body ───────────────────────────────────────── */
-.inv-accordion__body {
-  border-top: 1px solid #e2e8f0;
-  padding: 8px 0;
-}
-
-/* ── Doc row ────────────────────────────────────── */
+/* ── Doc rows ───────────────────────────────────── */
 .inv-doc-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 20px;
-  transition: background 0.15s;
+  gap: 10px;
+  padding: 9px 20px;
 }
 
 .inv-doc-row:hover {
-  background: #f8faff;
+  background: #f9fafb;
 }
 
+.inv-doc-link {
+  font-size: 0.9rem;
+  color: #2563eb;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.inv-doc-link:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+.inv-doc-plain {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* ── Multi-link rows (Annual Reports / Returns) ─── */
 .inv-doc-label {
   font-size: 0.9rem;
-  color: #4a5568;
+  color: #374151;
   line-height: 1.5;
-  flex: 1;
 }
 
-/* ── PDF button ─────────────────────────────────── */
-.inv-pdf-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 14px;
-  background: linear-gradient(135deg, #4f8ef7, #3b7de0);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border-radius: 20px;
+.inv-doc-tags {
+  display: flex;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.inv-doc-tag {
+  font-size: 0.9rem;
+  color: #2563eb;
   text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: opacity 0.2s, transform 0.15s;
 }
 
-.inv-pdf-btn:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
+.inv-doc-tag:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
 }
 
 /* ── Responsive ─────────────────────────────────── */
@@ -191,17 +168,12 @@
     padding: 0 16px 60px;
   }
 
-  .inv-accordion__header {
-    padding: 14px 16px;
+  .inv-group__header {
+    padding: 10px 16px;
   }
 
   .inv-doc-row {
-    padding: 10px 16px;
+    padding: 9px 16px;
     flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .inv-doc-label {
-    font-size: 0.85rem;
   }
 }

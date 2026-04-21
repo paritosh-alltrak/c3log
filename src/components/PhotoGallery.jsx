@@ -5,7 +5,6 @@ const categories = [
   {
     label: 'Diwali Celebration',
     photos: [
-      { src: '/photo-gallery/diwali1.JPG', alt: 'Diwali Celebration 1' },
       { src: '/photo-gallery/diwali2.JPG', alt: 'Diwali Celebration 2' },
       { src: '/photo-gallery/diwali3.JPG', alt: 'Diwali Celebration 3' },
     ],
