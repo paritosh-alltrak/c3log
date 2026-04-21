@@ -36,7 +36,7 @@ export default function Coverage() {
           <div className="coverage__highlights">
             {[
               { num: '452+', text: 'Cities covered' },
-              { num: '23000', text: 'Pincodes' },
+              { num: '20k+', text: 'Pincodes' },
               { num: '24/7', text: 'Operations' },
             ].map((h) => (
               <div key={h.num} className="coverage__hl">

@@ -27,6 +27,7 @@ import CurrentOpening from './components/CurrentOpening'
 import JobApplication from './components/JobApplication'
 import PhotoGallery from './components/PhotoGallery'
 import KeyDifferentiators from './components/KeyDifferentiators'
+import Investor from './components/Investor'
 import './App.css'
 
 export default function App() {
@@ -115,6 +116,10 @@ export default function App() {
 
       {page === 'key-differentiators' && (
         <KeyDifferentiators onNavigate={navigate} />
+      )}
+
+      {page === 'investor' && (
+        <Investor onNavigate={navigate} />
       )}
 
       <Footer onNavigate={navigate} />

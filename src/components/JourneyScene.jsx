@@ -10,8 +10,8 @@ export default function JourneyScene() {
   return (
     <section className="js-section">
       <div className="js-section__header">
-        <p className="section-label">from dorsteps to partner labs</p>
-        <h2 className="js-section__title">Your sample. Our phlebotomist.</h2>
+        <p className="section-label">from doorsteps to partner labs</p>
+        <h2 className="js-section__title">Your sample. Our phlebotomists.</h2>
         <p className="js-section__sub">One journey. One result.</p>
       </div>
 

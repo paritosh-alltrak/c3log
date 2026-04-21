@@ -190,7 +190,16 @@ export default function Navbar({ onNavigate, currentPage }) {
             </span>
           </li>
 
-          <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#contact'); }}>Contact</a></li>
+          <li>
+            <span
+              className={`navbar__link ${currentPage === 'investor' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('investor')}
+            >
+              Investor Relations
+            </span>
+          </li>
+
+          {/* <li><a href="#" role="button" tabIndex={0} onClick={(e) => { e.preventDefault(); handleHomeLink('#contact'); }}>Contact</a></li> */}
         </ul>
 
         {/* RIGHT: CTA + mobile menu toggle */}

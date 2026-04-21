@@ -4,7 +4,7 @@ import './JourneyTracker.css'
 const stops = [
   { label: 'Booking Confirmed', position: 0 },
   { label: 'Agent Dispatched', position: 25 },
-  { label: 'Sample Acquisition', position: 50 },
+  { label: 'Sample Collected', position: 50 },
   { label: 'Secure Transit', position: 75 },
   { label: 'Lab Handover', position: 100 },
 ]

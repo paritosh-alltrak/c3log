@@ -22,7 +22,7 @@ export default function Footer({ onNavigate }) {
         {/* Brand Column */}
         <div className="footer__brand">
           <a href="/" className="footer__logo-wrap" onClick={goPage('home')}>
-            {/* <img src="/image.png" alt="C3 Logo" className="footer__logo-img" /> */}
+            <img src="/cnclogo.png" alt="C3 Logistics Logo" className="footer__logo-img" />
             <span className="footer__brand-name">Credent Connect N Care Ltd.</span>
           </a>
           <p className="footer__tagline">

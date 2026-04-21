@@ -4,7 +4,7 @@ const stats = [
   { value: '452+', label: 'Cities Across India' },
   { value: '35+', label: 'Air Routes — Sample Logistics' },
   { value: '2–8°C', label: 'Temperature Precision — Cold Chain' },
-  { value: '14+ yr', label: 'In Operations — Trusted Nationwide' },
+  { value: '14+ yrs', label: 'In Operations — Trusted Nationwide' },
   { value: '6500+', label: 'Field Force — Pan India' },
 
 ]
