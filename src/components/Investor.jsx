@@ -122,9 +122,9 @@ const investorSections = [
         title: 'Annual Returns',
         docs: [
           { label: 'Annual Return 2020-21', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2020-21.pdf` }, { tag: 'MGT', pdf: `${B}/Annual Returns/MGT 7_2020-21.pdf` }] },
-          { label: 'Annual Return 2021-22', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2021-22.pdf` }] },
-          { label: 'Annual Return 2022-23', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2022-23.pdf` }] },
-          { label: 'Annual Return 2023-24' },
+          { label: 'Annual Return 2021-22', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2021-22.pdf` }, { tag: 'MGT', pdf: `${B}/Annual Returns/C3 Notice and DR FY 2122.pdf` }] },
+          { label: 'Annual Return 2022-23', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2022-23.pdf` }, { tag: 'MGT', pdf: `${B}/Annual Returns/C3 DR.pdf` }] },
+          { label: 'Annual Return 2023-24', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/C3 FY 2324 AR - BS - Signed.pdf` }, { tag: 'DR', pdf: `${B}/Annual Returns/C3 - DR 2324_compressed.pdf` }] },
           { label: 'Annual Return 2024-25', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC-4 2024-25.pdf` }, { tag: 'MGT', pdf: `${B}/Annual Returns/MGT-7 2024-25.pdf` }] },
         ],
       },

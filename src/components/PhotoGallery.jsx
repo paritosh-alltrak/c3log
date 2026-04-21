@@ -3,25 +3,39 @@ import './PhotoGallery.css'
 
 const categories = [
   {
-    label: 'Diwali Celebration',
+    label: 'Annual Operations',
     photos: [
-      { src: '/photo-gallery/diwali2.JPG', alt: 'Diwali Celebration 2' },
-      { src: '/photo-gallery/diwali3.JPG', alt: 'Diwali Celebration 3' },
+      { src: '/photo-gallery/aop1.JPG', alt: 'Annual Operations 1' },
     ],
   },
   {
-    label: 'Holi Celebration',
+    label: 'Reward & Recognition',
+    photos: [
+      { src: '/photo-gallery/rnr4.JPG', alt: 'Reward & Recognition 1' },
+      { src: '/photo-gallery/rnr5.JPG', alt: 'Reward & Recognition 2' },
+      { src: '/photo-gallery/rnr6.JPG', alt: 'Reward & Recognition 3' },
+
+
+
+    ],
+  },
+  {
+    label: 'Cultural Celebrations',
     photos: [
       { src: '/photo-gallery/holi1.JPG', alt: 'Holi Celebration 1' },
       { src: '/photo-gallery/holi2.JPG', alt: 'Holi Celebration 2' },
       { src: '/photo-gallery/holi3.JPG', alt: 'Holi Celebration 3' },
       { src: '/photo-gallery/holi4.JPG', alt: 'Holi Celebration 4' },
+      { src: '/photo-gallery/diwali2.JPG', alt: 'Diwali Celebration 1' },
+      { src: '/photo-gallery/diwali3.JPG', alt: 'Diwali Celebration 2' },
     ],
   },
   {
-    label: 'Annual Operations',
+    label: 'Corporate',
     photos: [
-      { src: '/photo-gallery/aop1.JPG', alt: 'Annual Operations 1' },
+      { src: '/photo-gallery/Rnr1.JPG', alt: 'Corporate 1' },
+      { src: '/photo-gallery/rnr2.JPG', alt: 'Corporate 2' },
+      { src: '/photo-gallery/rnr3.JPG', alt: 'Corporate 3' },
     ],
   },
 ]
@@ -55,20 +69,24 @@ export default function PhotoGallery() {
           <div className="gallery-section__header">
             <h2>{cat.label}</h2>
           </div>
-          <div className="gallery-grid">
-            {cat.photos.map((photo, i) => (
-              <div
-                key={i}
-                className="gallery-card"
-                onClick={() => openLightbox(cat.photos, i)}
-              >
-                <img src={photo.src} alt={photo.alt} loading="lazy" />
-                <div className="gallery-card__overlay">
-                  <span className="gallery-card__zoom">&#x26F6;</span>
+          {cat.photos.length === 0 ? (
+            <p className="gallery-empty">Photos coming soon.</p>
+          ) : (
+            <div className="gallery-grid">
+              {cat.photos.map((photo, i) => (
+                <div
+                  key={i}
+                  className="gallery-card"
+                  onClick={() => openLightbox(cat.photos, i)}
+                >
+                  <img src={photo.src} alt={photo.alt} loading="lazy" />
+                  <div className="gallery-card__overlay">
+                    <span className="gallery-card__zoom">&#x26F6;</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       ))}
 
