@@ -75,8 +75,13 @@
 }
 
 @keyframes orbitFlow {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: calc(-1 * var(--perim) * 1px); }
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: calc(-1 * var(--perim) * 1px);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -101,7 +106,7 @@
   justify-content: center;
   z-index: 10;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.4s;
+    box-shadow 0.4s;
 }
 
 .products__hub--shrunk {
@@ -139,8 +144,8 @@
   padding: 12px;
   box-shadow: 0 4px 16px rgba(13, 38, 72, 0.08);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s,
-              border-color 0.3s;
+    box-shadow 0.3s,
+    border-color 0.3s;
   display: block;
 }
 
@@ -179,6 +184,7 @@
     opacity: 0;
     transform: translateY(-50%) translateX(10px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(-50%) translateX(0) scale(1);
@@ -250,6 +256,7 @@
     opacity: 0;
     transform: translateX(8px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

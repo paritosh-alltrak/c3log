@@ -111,3 +111,37 @@
     transform: translateY(-3px);
   }
 }
+
+@media (max-width: 768px) {
+  .js-scooter__img {
+    width: 90px;
+    height: auto;
+  }
+
+  @keyframes scoot-ride {
+    0% {
+      left: -100px;
+    }
+
+    100% {
+      left: 72%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .js-scooter__img {
+    width: 60px;
+    height: auto;
+  }
+
+  @keyframes scoot-ride {
+    0% {
+      left: -70px;
+    }
+
+    100% {
+      left: 72%;
+    }
+  }
+}

@@ -63,9 +63,9 @@ const products = [
 const CX = 350, CY = 350, SIZE = 700
 const orbitDefs = [
   { rx: 280, ry: 120, tilt: -35, angles: [0, 180], productIdx: [0, 1] },
-  { rx: 280, ry: 120, tilt:   0, angles: [0, 180], productIdx: [2, 3] },
-  { rx: 280, ry: 120, tilt:  35, angles: [0, 180], productIdx: [4, 5] },
-  { rx: 280, ry: 120, tilt:  90, angles: [0, 180], productIdx: [6, 7] },
+  { rx: 280, ry: 120, tilt: 0, angles: [0, 180], productIdx: [2, 3] },
+  { rx: 280, ry: 120, tilt: 35, angles: [0, 180], productIdx: [4, 5] },
+  { rx: 280, ry: 120, tilt: 90, angles: [0, 180], productIdx: [6, 7] },
 ]
 
 function ellipsePoint(rx, ry, tiltDeg, angleDeg) {
@@ -124,7 +124,7 @@ export default function Products() {
                 {orbitDefs.map((_, i) => (
                   <linearGradient key={i} id={`flow${i}`} gradientUnits="userSpaceOnUse"
                     x1={CX - 280} y1={CY} x2={CX + 280} y2={CY}>
-                    <stop offset="0%"  stopColor="#4f8ef7" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#4f8ef7" stopOpacity="0" />
                     <stop offset="30%" stopColor="#4f8ef7" stopOpacity="0.7" />
                     <stop offset="50%" stopColor="#6aadff" stopOpacity="1" />
                     <stop offset="70%" stopColor="#4f8ef7" stopOpacity="0.7" />
@@ -174,7 +174,7 @@ export default function Products() {
                 className={`products__card ${hovered === c.idx ? 'products__card--active' : ''}`}
                 style={{
                   left: `${(c.x / SIZE) * 100}%`,
-                  top:  `${(c.y / SIZE) * 100}%`,
+                  top: `${(c.y / SIZE) * 100}%`,
                 }}
                 onMouseEnter={() => setHovered(c.idx)}
                 onMouseLeave={() => setHovered(null)}

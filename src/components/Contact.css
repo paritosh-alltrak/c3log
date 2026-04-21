@@ -74,7 +74,7 @@
 
 /* Dark header */
 .contact__form-header {
-  background: linear-gradient(135deg, #0d1b2e 0%, #1a3a6b 100%);
+  background: linear-gradient(160deg, #1f74eb 0%, #e8f0fb 100%);
   padding: 28px 32px;
 }
 
@@ -227,9 +227,18 @@
   gap: 12px;
 }
 
-.contact__success-icon { font-size: 2.5rem; }
-.contact__success h3 { font-size: 1.5rem; color: var(--text-primary); }
-.contact__success p { color: var(--text-secondary); }
+.contact__success-icon {
+  font-size: 2.5rem;
+}
+
+.contact__success h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.contact__success p {
+  color: var(--text-secondary);
+}
 
 /* ─────────────────────────────────────────
    Responsive

@@ -69,3 +69,8 @@
   pointer-events: none;
   transition: left 0.12s ease-out;
 }
+@media (max-width: 768px) {
+  .jt {
+    display: none;
+  }
+}
