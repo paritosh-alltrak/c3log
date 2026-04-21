@@ -195,7 +195,7 @@ export default function Navbar({ onNavigate, currentPage }) {
               className={`navbar__link ${currentPage === 'investor' ? 'navbar__link--active' : ''}`}
               onClick={() => handleNav('investor')}
             >
-              Investor Relations
+              Investor
             </span>
           </li>
 

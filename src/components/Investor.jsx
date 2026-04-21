@@ -244,11 +244,7 @@ export default function Investor({ onNavigate }) {
   return (
     <div className="inv-page">
       <div className="inv-intro">
-        <p className="inv-intro__breadcrumb">
-          <span className="inv-intro__bc-link" onClick={() => onNavigate('home')}>Home</span>
-          <span className="inv-intro__bc-sep">›</span>
-          <span>Investor Relations</span>
-        </p>
+
         <h1 className="inv-intro__title">Investor <span>Relations</span></h1>
         <p className="inv-intro__sub">Transparency, governance and financial disclosures for our stakeholders.</p>
       </div>
