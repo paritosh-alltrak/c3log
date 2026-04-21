@@ -4,6 +4,33 @@ const B = '/Downloads'
 
 const investorSections = [
   {
+    id: 'corporate-governance',
+    heading: 'Corporate Governance',
+    groups: [
+      {
+        id: 'cg-profile',
+        title: 'Corporate Profile',
+        docs: [
+          { label: 'Corporate Profile' },
+        ],
+      },
+      {
+        id: 'cg-bod',
+        title: 'BOD & Committees',
+        docs: [
+          { label: 'BOD & Committees' },
+        ],
+      },
+      {
+        id: 'cg-directors',
+        title: 'Brief Profile of our Directors',
+        docs: [
+          { label: 'Brief Profile of our Directors' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'codes-policies',
     heading: 'Codes & Policies',
     groups: [
@@ -56,6 +83,13 @@ const investorSections = [
           { label: 'Issuer Agreement', pdf: `${B}/Material Contracts/Issuer Agreement_Signed.pdf` },
         ],
       },
+      {
+        id: 'cp-material-docs',
+        title: 'Material Documents',
+        docs: [
+          { label: 'Material Documents' },
+        ],
+      },
     ],
   },
   {
@@ -92,6 +126,68 @@ const investorSections = [
           { label: 'Annual Return 2022-23', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC 4 2022-23.pdf` }] },
           { label: 'Annual Return 2023-24' },
           { label: 'Annual Return 2024-25', links: [{ tag: 'AOC', pdf: `${B}/Annual Returns/AOC-4 2024-25.pdf` }, { tag: 'MGT', pdf: `${B}/Annual Returns/MGT-7 2024-25.pdf` }] },
+        ],
+      },
+      {
+        id: 'fin-presentation',
+        title: 'Investor Presentation',
+        docs: [
+          { label: 'Investor Presentation' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'stock-exchange',
+    heading: 'Stock Exchange',
+    groups: [
+      {
+        id: 'se-disclosures',
+        title: 'Other Disclosures/Announcements',
+        docs: [
+          { label: 'Other Disclosures/Announcements' },
+        ],
+      },
+      {
+        id: 'se-reg30',
+        title: 'Disclosures – Reg. 30',
+        docs: [
+          { label: 'Disclosures – Reg. 30' },
+        ],
+      },
+      {
+        id: 'se-notices',
+        title: 'Notice & Updates',
+        docs: [
+          { label: 'Notice & Updates' },
+        ],
+      },
+      {
+        id: 'se-shareholding',
+        title: 'Shareholding Pattern',
+        docs: [
+          { label: 'Shareholding Pattern' },
+        ],
+      },
+      {
+        id: 'se-board-meetings',
+        title: 'Board Meetings',
+        docs: [
+          { label: 'Board Meetings' },
+        ],
+      },
+      {
+        id: 'se-general-meetings',
+        title: 'General Meetings',
+        docs: [
+          { label: 'General Meetings' },
+        ],
+      },
+      {
+        id: 'se-grievance',
+        title: 'Investor Grievance Redressal details',
+        docs: [
+          { label: 'Investor Grievance Redressal details' },
         ],
       },
     ],
