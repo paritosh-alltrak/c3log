@@ -1,11 +1,33 @@
 import { useState } from 'react'
 import './Contact.css'
 
+const interests = [
+  'Cold chain',
+  'Phlebotomy',
+  'C3 Wellness',
+  'C3 Post',
+  'HealthJob',
+  'AllTrack',
+  'HRMS',
+  'Other',
+]
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', org: '', email: '', phone: '', message: '' })
+  const [form, setForm] = useState({
+    org: '', industry: '', name: '', email: '', phone: '', designation: '', interests: [],
+  })
   const [sent, setSent] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const toggleInterest = (item) => {
+    setForm((prev) => ({
+      ...prev,
+      interests: prev.interests.includes(item)
+        ? prev.interests.filter((i) => i !== item)
+        : [...prev.interests, item],
+    }))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -39,7 +61,7 @@ export default function Contact() {
               <span className="contact__info-icon">📧</span>
               <div>
                 <p className="contact__info-label">Email</p>
-                <p className="contact__info-val"> info@c3logistics.co.in</p>
+                <p className="contact__info-val">info@c3logistics.co.in</p>
               </div>
             </div>
             <div className="contact__info-item">
@@ -63,7 +85,7 @@ export default function Contact() {
                 className="contact__submit"
                 style={{ marginTop: 16 }}
                 onClick={() => {
-                  setForm({ name: '', org: '', email: '', phone: '', message: '' })
+                  setForm({ org: '', industry: '', name: '', email: '', phone: '', designation: '', interests: [] })
                   setSent(false)
                 }}
               >
@@ -72,66 +94,92 @@ export default function Contact() {
             </div>
           ) : (
             <form className="contact__form" onSubmit={handleSubmit}>
-              <div className="form-row">
+              <div className="contact__form-header">
+                <h3>Get in touch</h3>
+                <p>Fill in your details and we'll reach out shortly.</p>
+              </div>
+
+              <div className="contact__form-body">
                 <div className="form-field">
-                  <label>Full name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    // placeholder="Dr. Priya Sharma"
-                    required
-                  />
-                </div>
-                <div className="form-field">
-                  <label>Organisation *</label>
                   <input
                     type="text"
                     name="org"
+                    placeholder="Organisation name"
                     value={form.org}
                     onChange={handleChange}
-                    // placeholder="Apollo Diagnostics"
                     required
                   />
                 </div>
-              </div>
-              <div className="form-row">
                 <div className="form-field">
-                  <label>Email *</label>
+                  <input
+                    type="text"
+                    name="industry"
+                    placeholder="Industry"
+                    value={form.industry}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-field">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-field">
                   <input
                     type="email"
                     name="email"
+                    placeholder="Email address"
                     value={form.email}
                     onChange={handleChange}
-                    // placeholder="priya@apollo.com"
                     required
                   />
                 </div>
                 <div className="form-field">
-                  <label>Phone</label>
                   <input
                     type="tel"
                     name="phone"
+                    placeholder="Phone number"
                     value={form.phone}
                     onChange={handleChange}
-                  // placeholder="+91 98765 43210"
                   />
                 </div>
+                <div className="form-field">
+                  <input
+                    type="text"
+                    name="designation"
+                    placeholder="Designation"
+                    value={form.designation}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="contact__interests">
+                  <p className="contact__interests-label">I'm interested in</p>
+                  <div className="contact__chips">
+                    {interests.map((item) => (
+                      <button
+                        key={item}
+                        type="button"
+                        className={`contact__chip ${form.interests.includes(item) ? 'contact__chip--active' : ''}`}
+                        onClick={() => toggleInterest(item)}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <button type="submit" className="contact__submit">
+                  Send — we'll be in touch
+                </button>
+
+                <p className="contact__disclaimer">No spam. Your data stays with us.</p>
               </div>
-              <div className="form-field">
-                <label>How can we help?</label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={4}
-                  placeholder="Tell us about your logistics needs — volume, coverage area, special requirements..."
-                />
-              </div>
-              <button type="submit" className="contact__submit">
-                Send message →
-              </button>
             </form>
           )}
         </div>
