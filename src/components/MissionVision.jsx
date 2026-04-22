@@ -25,14 +25,17 @@ export default function MissionVision({ onNavigate }) {
           </div>
           <div className="mv-card__label">Vision</div>
           <p>
-            By the <strong>year 2025</strong>, we envision to onboard and train a staff of over{' '}
-            <strong>5000 individuals</strong> and expand our workspace in more than{' '}
-            <strong>350 cities.</strong>
+            India processes a billion diagnostic tests a year. That number will double in a decade — and
+            behind every one of those tests is a person who deserves access to the infrastructure that makes
+            their result accurate, timely, and trustworthy. Credent is building that infrastructure. Not for the
+            metros alone. Not for the patients who already have easy access. For every city, every distance, every
+            individual — regardless of where they live or what they can reach on their own.
           </p>
           <p>
-            We envision Credent Group as a trend setter — not only in the industries we operate in,
-            but in every business vertical we aspire to enter. Guided by the same ethics and
-            principles, we are committed to emerge as a leader in all newer territories.
+            Our vision is to be India's leading healthcare operations platform: the backbone that removes the
+            barriers of time, distance, and circumstance from the journey of getting care. Scale without
+            compromise. Trust without exception. Technology without complexity. That is the company we are
+            building — and we will not stop until the infrastructure is as accessible as the right it exists to serve.
           </p>
         </div>
 
@@ -43,15 +46,14 @@ export default function MissionVision({ onNavigate }) {
             </svg>
           </div>
           <div className="mv-card__label">Mission</div>
-          <p>
-            As a pioneer in managing customized business processes for Healthcare companies across
-            India, our mission is to help them connect with customers and deliver ideas, products,
-            logistics, and healthcare services seamlessly.
-          </p>
-          <p>
-            To accomplish this, we are equipped with an excellent resource team of Logistics
-            professionals, Phlebotomists, Home Collection Phlebotomists, and Customer Care
-            Executives.
+          {/* <h3 className="mv-card__mission-title">To build a healthcare operations powerhouse rooted in India and trusted across the world.</h3> */}
+          <p>To build a healthcare operations powerhouse rooted in India and trusted across the world.
+            Credent's ambition is building the operational infrastructure and technology ecosystem that will
+            serve healthcare and B2B partners across South Asia, the Middle East, and Africa — a network that
+            crosses borders, bridges health systems, and carries the same standard of accountability whether the
+            sample is moving through Lucknow or Lagos. India has the scale, the talent, and the operational
+            knowledge to lead global pre analytics healthcare industry. Credent intends to be the company that
+            proves it.
           </p>
         </div>
       </div>

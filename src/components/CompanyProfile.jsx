@@ -58,25 +58,45 @@ export default function CompanyProfile({ onNavigate }) {
             </h1>
 
             <p className="cp-intro__body">
-              Credent Connect N Care is headquartered in Delhi and operates one of India's
-              largest healthcare workforce and logistics networks — built over 14 years of
-              relentless execution across 450+ cities.
+              Credent Group was founded in Delhi in 2012 by Karan Sharma — today Founder & Whole-Ɵme
+              Director of the Group — with six employees, a head office in the capital, and a convicƟon that India's
+              diagnosƟc economy deserved beƩer infrastructure than it had.
+              The insight was simple but radical: healthcare logisƟcs was being treated as an aŌerthought. Samples
+              moved in general courier bags. Phlebotomists were untrained and untracked. Cold chains broke
+              silently and nobody measured the cost. The pre-analyƟcal journey — everything that happens before
+              a result is generated — was invisible, unmanaged, and unaccountable.
+              Credent was built to change that. Not incrementally. Structurally.
+              Twelve years later, the Credent Group operates across 452 ciƟes, employs 6,500+ healthcare
+              personnel, and runs the operaƟonal infrastructure that some of India's most trusted diagnosƟc
+              chains, hospitals, and pharma brands depend on every day. What began as a logisƟcs company has
+              become something the industry didn't have a name for — a dedicated healthcare operations partner.
+              End to end. At naƟonal scale.
+
             </p>
 
             <p className="cp-intro__body">
-              We deploy trained field executives, phlebotomists, paramedics, and lab
-              technicians while powering their operations with proprietary platforms:
-              C3HRMS, C3POST, and ConnectNGrow.
+              Today the Credent Group comprises three entities:
+              Credent Managements & Consultants Pvt. Ltd.
+              The consulƟng and management arm — strategy, compliance, and operaƟonal architecture for
+              healthcare organisaƟons at scale.
+              Credent Connect N Care Ltd.
+              The operating company behind C3 — cold chain logistics, home sample collecƟon, corporate health
+              services, supply chain management, and the technology that ties it all together.
+              Credent Team Pvt. Ltd.
+              The talent and workforce engine — training, placement, and management of healthcare-specific
+              personnel across India.
+              One group. Three companies. One purpose — to run the healthcare infrastructure India deserves.
+
             </p>
 
-            <div className="cp-services">
+            {/* <div className="cp-services">
               {services.map((s) => (
                 <div key={s} className="cp-service-tag">
                   <span className="cp-service-dot" />
                   {s}
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
