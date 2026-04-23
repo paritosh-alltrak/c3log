@@ -7,7 +7,7 @@ const interests = [
   'C3 Wellness',
   'C3 Post',
   'HealthJob',
-  'AllTrack',
+  'AllTrak',
   'HRMS',
   'Other',
 ]
