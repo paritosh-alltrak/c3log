@@ -140,19 +140,7 @@ export default function ProductsPage() {
               )
             })}
 
-            {/* Full-circle overlay on hover */}
-            {hovered !== null && (
-              <circle
-                cx={CX}
-                cy={CY}
-                r={R}
-                fill={hovProd.color}
-                className="eco__hover-fill"
-                style={{ pointerEvents: 'none' }}
-              />
-            )}
-
-            {/* Divider lines */}
+            {/* Divider lines — rendered before hover-fill so fill covers them */}
             {products.map((_, i) => {
               const angle = toRad(i * STEP - 90)
               return (
@@ -168,6 +156,18 @@ export default function ProductsPage() {
                 />
               )
             })}
+
+            {/* Full-circle overlay on hover — covers divider lines */}
+            {hovered !== null && (
+              <circle
+                cx={CX}
+                cy={CY}
+                r={R}
+                fill={hovProd.color}
+                className="eco__hover-fill"
+                style={{ pointerEvents: 'none' }}
+              />
+            )}
 
             {/* Inner accent ring on hover */}
             {hovered !== null && (

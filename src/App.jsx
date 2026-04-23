@@ -28,6 +28,7 @@ import JobApplication from './components/JobApplication'
 import PhotoGallery from './components/PhotoGallery'
 import KeyDifferentiators from './components/KeyDifferentiators'
 import Investor from './components/Investor'
+import CSR from './components/CSR'
 import './App.css'
 
 export default function App() {
@@ -122,7 +123,13 @@ export default function App() {
         <Investor onNavigate={navigate} />
       )}
 
-      <Footer onNavigate={navigate} />
+      {page === 'csr' && (
+        <CSR onNavigate={navigate} />
+      )}
+
+      <div style={page === 'services' ? { marginLeft: '190px' } : {}}>
+        <Footer onNavigate={navigate} />
+      </div>
 
       {/* {page === 'our-team' && (
         <div style={{
