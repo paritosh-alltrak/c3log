@@ -1,10 +1,10 @@
 .infra {
-  background: var(--bg);
-  padding: 100px 24px;
+  background: #1a6fd4;
+  padding: 80px 48px;
 }
 
 .infra__inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -12,74 +12,44 @@
   align-items: start;
 }
 
-.infra__title {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 300;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-  line-height: 1.25;
-}
-
-.infra__title em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.infra__desc {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.btn--primary {
-  background: var(--accent);
-  color: #fff;
-  padding: 13px 28px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+.infra__overline {
+  font-size: 0.65rem;
   font-weight: 500;
-  transition: background 0.2s;
-}
-.btn--primary:hover { background: #1559b5; }
-
-.infra__right {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding-top: 48px;
-}
-
-.infra__pillar {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.infra__pillar-num {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-  margin-top: 3px;
-  width: 24px;
-}
-
-.infra__pillar-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-
-.infra__pillar-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 28px;
   line-height: 1.6;
 }
 
+.infra__headline {
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.infra__body {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.infra__closing {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
 @media (max-width: 900px) {
-  .infra__inner { grid-template-columns: 1fr; gap: 48px; }
-  .infra__right { padding-top: 0; }
+  .infra {
+    padding: 60px 24px;
+  }
+  .infra__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
