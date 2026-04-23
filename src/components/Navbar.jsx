@@ -6,6 +6,7 @@ const aboutItems = [
   { label: 'Company Profile', page: 'company-profile' },
   { label: 'Mission & Vision', page: 'mission-vision' },
   { label: 'Our Team', page: 'our-team' },
+  { label: 'CSR', page: 'csr' },
   { label: 'Privacy And Policy', page: 'privacy-policy' },
 ]
 
@@ -146,8 +147,10 @@ export default function Navbar({ onNavigate, currentPage }) {
 
           <li>
             <span
-              className={`navbar__link ${currentPage === 'training' ? 'navbar__link--active' : ''}`}
-              onClick={() => handleNav('training')}
+              className={`navbar__link ${currentPage === 'training' ? 'navbar__link--active' : ''
+                }`}
+              onClick={() => window.open('https://connectngrow.co/', '_blank')}
+              style={{ cursor: 'pointer' }}
             >
               Training
             </span>
@@ -155,7 +158,7 @@ export default function Navbar({ onNavigate, currentPage }) {
 
 
           {/* CAREER DROPDOWN */}
-          <li
+          {/* <li
             className={`navbar__dropdown-wrap ${careerOpen ? 'navbar__dropdown-wrap--open' : ''}`}
             onMouseEnter={() => setCareerOpen(true)}
             onMouseLeave={() => setCareerOpen(false)}
@@ -179,7 +182,42 @@ export default function Navbar({ onNavigate, currentPage }) {
                 ))}
               </div>
             </ul>
+          </li> */}
+
+          <li
+            className={`navbar__dropdown-wrap ${careerOpen ? 'navbar__dropdown-wrap--open' : ''}`}
+            onMouseEnter={() => setCareerOpen(true)}
+            onMouseLeave={() => setCareerOpen(false)}
+          >
+            <span
+              className={`navbar__dropdown-trigger ${['working-with-credent', 'current-opening', 'job-application'].includes(currentPage)
+                ? 'navbar__link--active'
+                : ''
+                }`}
+              onClick={() => window.open('https://healthcarejob.in/', '_blank')}
+              style={{ cursor: 'pointer' }}
+            >
+              Career
+            </span>
+
+            {/* <ul className="navbar__dropdown">
+              <div className="navbar__dropdown-inner">
+                {careerItems.map((item) => (
+                  <li key={item.page}>
+                    <span
+                      className={`navbar__dropdown-item ${currentPage === item.page ? 'navbar__dropdown-item--active' : ''
+                        }`}
+                      onClick={() => handleNav(item.page)}
+                    >
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
+              </div>
+            </ul> */}
           </li>
+
+
 
           <li>
             <span
