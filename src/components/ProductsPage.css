@@ -20,7 +20,7 @@
 
 .eco__header {
   text-align: center;
-  padding: 56px 24px 16px;
+  padding: 120px 24px 16px;
   max-width: 620px;
   margin: 0 auto;
   position: relative;
@@ -93,8 +93,15 @@
 }
 
 @keyframes ecoFillIn {
-  from { transform: scale(0); opacity: 0.6; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .eco__info {
@@ -110,8 +117,15 @@
 }
 
 @keyframes ecoInfoIn {
-  from { opacity: 0; transform: translate(-50%, -47%); }
-  to   { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -47%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .eco__info-num {
@@ -219,9 +233,15 @@
     text-align: center;
   }
 
-  .eco__legend { gap: 10px; }
+  .eco__legend {
+    gap: 10px;
+  }
 
-  .eco__info { width: 68%; }
+  .eco__info {
+    width: 68%;
+  }
 
-  .eco__info-desc { display: none; }
+  .eco__info-desc {
+    display: none;
+  }
 }
